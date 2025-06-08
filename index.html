@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubus Engineering // Powering Digital Infrastructure Across Africa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Elegant Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Main Header & Navigation: Fixed at the top, with reworked nav controls -->
+    <header class="main-header">
+        <div class="logo">Kubus Engineering<span class="logo-dot">.</span></div>
+        <nav class="main-nav">
+            <!-- Mobile Navigation Toggle (Hamburger Icon) -->
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#cybersecurity">Cybersecurity & Compliance</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#downloads">Downloads</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#contact-trigger">Contact Us</a></li>
+                <!-- Controls Container for Theme and Accent Color Toggles -->
+                <li class="nav-controls-container">
+                     <!-- Accent Color Picker -->
+                    <div class="accent-color-picker-wrapper">
+                        <label for="accent-color-picker" class="color-picker-label" aria-label="Choose accent color">
+                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-color-picker">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0L12 2.69z"></path>
+                                <path d="M12 22.01V12"></path>
+                            </svg>
+                        </label>
+                        <input type="color" id="accent-color-picker" value="#007BFF">
+                    </div>
+                    <!-- Theme Toggle Button -->
+                    <div class="theme-toggle-container">
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+                            <!-- Dark Mode Icon (Moon) -->
+                            <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                            <!-- Light Mode Icon (Sun) -->
+                            <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu Overlay for Mobile Navigation -->
+    <div class="menu-overlay"></div>
+
+    <main>
+        <!-- Home Page: Interactive Hero Section -->
+        <section id="hero" class="hero-section">
+            <div id="particles-js" class="particles-container"></div>
+            <div class="hero-content">
+                <h1 class="hero-headline">Kubus Engineering – Powering Digital Infrastructure Across Africa.</h1>
+                <p class="hero-subline">Trusted partners dedicated to bridging the digital divide, leveraging seasoned experts and international collaborations.</p>
+                <div class="hero-ctas">
+                    <a href="#contact-trigger" class="btn primary-btn" aria-label="Request a quote">Request a Quote</a>
+                    <a href="#packages" class="btn secondary-btn" aria-label="View our service packages">View Our Packages</a>
+                </div>
+                <a href="#services" class="scroll-down-btn" aria-label="Scroll down to explore our expertise">Explore Our Expertise <span class="arrow">↓</span></a>
+            </div>
+        </section>
+
+        <!-- About Us Section: Provides company history, mission, vision, and team details. -->
+        <section id="about" class="about-section section-padding reveal-section">
+            <div class="container">
+                <h2 class="section-title">About Kubus Engineering</h2>
+                <p class="section-subtitle">Our history, values, and why we are your ideal partner.</p>
+                <div class="about-grid">
+                    <div class="about-history reveal-item">
+                        <h3>Our Journey</h3>
+                        <p><strong>Kubus Engineering</strong> is an indigenously owned Limited Liability Company duly registered on 1st November 2019, with the Corporate Affairs Commission (CAC) and other appropriate relevant authorities in Nigeria. With our head office in Enugu and branch offices in Lagos and Abuja, we ensure wide coverage and seamless service delivery across Africa.</p>
+                        <p>We are a team of seasoned Software Engineers and Telecommunication experts, collaborating with international partners from China, India, and the USA to deliver first-class, cutting-edge tech services. We are known for world-class practices that guarantee an astonishing <strong>99.99% service availability</strong>, complemented by a proactive preventive maintenance strategy.</p>
+                    </div>
+                    <div class="about-mission-vision reveal-item">
+                        <h3>Mission & Vision</h3>
+                        <p class="mission-statement"><strong>Mission:</strong> "Guaranteed quality communication and efficient networks through proven innovative services, products and skills driven by experience and integrity."</p>
+                        <p class="vision-statement"><strong>Vision:</strong> "To be the household name in the Telecom industry worldwide; Empowering minds, unlocking potential; Connecting classrooms, transforming futures; Bridging the gap, igniting learning; Tech-powered education, accessible to all; Your school, connected and limitless."</p>
+                        <p class="core-value"><strong>Core Value:</strong> "Our customer's satisfaction and trust drive our competences and services."</p>
+                    </div>
+                    <div class="about-why-us reveal-item">
+                        <h3>Why Choose Us?</h3>
+                        <ul>
+                            <li><strong>Proven Expertise:</strong> Over two decades of collective experience in complex networking, cybersecurity, and energy solutions.</li>
+                            <li><strong>Reliability:</strong> Guaranteed 99.99% service availability with proactive maintenance.</li>
+                            <li><strong>Innovation:</strong> Leveraging cutting-edge technologies and global partnerships.</li>
+                            <li><strong>Client-Centric:</strong> Dedicated to understanding unique challenges and delivering tailored solutions.</li>
+                            <li><strong>Comprehensive Support:</strong> From initial consultation to ongoing maintenance.</li>
+                        </ul>
+                    </div>
+                    <div class="about-team reveal-item">
+                        <h3>Our Leadership</h3>
+                        <div class="team-member">
+                            <div class="member-photo-placeholder" aria-label="Photo of Dr. Akubue Augustine Uchenna"></div>
+                            <h4>Dr. Akubue Augustine Uchenna</h4>
+                            <p><strong>Chairman</strong> (United Nations diplomat with extensive experience in human management, planning, execution, and monitoring of projects.)</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo-placeholder" aria-label="Photo of Engr. Okigbo Chijioke Stephen"></div>
+                            <h4>Engr. Okigbo Chijioke Stephen</h4>
+                            <p><strong>Project Director / Network Expert</strong> (PMP certified, COREN registered, with profound experience in telecom and IT projects.)</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo-placeholder" aria-label="Photo of Engr. Nwabueze Ugwu"></div>
+                            <h4>Engr. Nwabueze Ugwu</h4>
+                            <p><strong>Project Manager</strong> (PMP certified with a strong background in project implementation and e-banking solutions.)</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo-placeholder" aria-label="Photo of Maurice M Igbanongo"></div>
+                            <h4>Maurice M Igbanongo</h4>
+                            <p><strong>Passive Infrastructure & Maintenance Engineer</strong> (Experienced in GSM power, BSS, and Transmission network operations.)</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo-placeholder" aria-label="Photo of Amos Terdboniface Aye"></div>
+                            <h4>Amos Terdboniface Aye</h4>
+                            <p><strong>Information Technology Team Lead</strong> (CCNP, MCITP, ITIL, SCS certified expert in network and systems administration.)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section: Detailed breakdown of Kubus Engineering's core service offerings. -->
+        <section id="services" class="services-section section-padding reveal-section">
+            <div class="container">
+                <h2 class="section-title">Our Core Services</h2>
+                <p class="section-subtitle">Comprehensive solutions for your digital infrastructure needs.</p>
+                <div class="service-category-grid">
+                    <div class="service-category-item reveal-item">
+                        <h3>Network Infrastructure</h3>
+                        <ul>
+                            <li><strong>Network Design & Installation:</strong> Planning, implementation, and maintenance of microwave, radio, and fiber optic links.</li>
+                            <li><strong>Starlink & Satellite Internet Setup:</strong> Providing high-speed internet access to remote and underserved areas, including VSAT installation and activation.</li>
+                            <li><strong>LAN/WAN Integration:</strong> Structured cabling, WAN setup, systems supply, and integration for seamless office connectivity.</li>
+                            <li><strong>Data Cabling (Cat6/Cat7):</strong> Professional installation and certification of Cat6/Cat7 cables.</li>
+                        </ul>
+                        <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for network infrastructure">Get a Custom Quote</a>
+                    </div>
+                    <div class="service-category-item reveal-item">
+                        <h3>Power & Energy Solutions</h3>
+                        <ul>
+                            <li><strong>Solar Power Installation:</strong> Design and installation of robust solar systems for sustainable power.</li>
+                            <li><strong>Battery Backup Systems:</strong> Implementation and maintenance of reliable battery backup solutions.</li>
+                            <li><strong>Inverter Installation:</strong> Expert installation and maintenance of inverter systems for uninterrupted power supply.</li>
+                            <li><strong>Grid Connection & Optimization:</strong> Connecting sites to the national grid, installation of ATS and meters, and power load balancing.</li>
+                        </ul>
+                        <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for power and energy solutions">Get a Custom Quote</a>
+                    </div>
+                    <div class="service-category-item reveal-item">
+                        <h3>Cybersecurity Solutions</h3>
+                        <ul>
+                            <li><strong>Firewall Installation & Management:</strong> Deploying and managing active IOS, ASA, and Checkpoint firewalls.</li>
+                            <li><strong>Endpoint Security:</strong> Protecting devices from threats with advanced antivirus and endpoint protection.</li>
+                            <li><strong>Cybersecurity Software Licensing:</strong> Providing and managing licenses for industry-leading security software.</li>
+                            <li><strong>Security Protocols:</strong> Implementing robust security measures for data protection and network integrity.</li>
+                        </ul>
+                        <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for cybersecurity solutions">Get a Custom Quote</a>
+                    </div>
+                    <div class="service-category-item reveal-item">
+                        <h3>IT Training & Support</h3>
+                        <ul>
+                            <li><strong>Corporate Training:</strong> Equipping teams with skills in Cisco, Microsoft, CompTIA, and ITIL.</li>
+                            <li><strong>Ongoing Maintenance & Monitoring:</strong> 24/7 support and proactive maintenance for networks and systems.</li>
+                            <li><strong>Disaster Recovery Planning:</strong> Developing and implementing strategies for business continuity.</li>
+                            <li><strong>IT Consulting & Strategy:</strong> Expert advice on optimizing IT infrastructure and digital transformation.</li>
+                        </ul>
+                        <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for IT training and support">Get a Custom Quote</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages / Pricing Section: Outlines standard service packages for various needs. -->
+        <section id="packages" class="packages-section section-padding reveal-section">
+            <div class="container">
+                <h2 class="section-title">Our Service Packages</h2>
+                <p class="section-subtitle">Tailored solutions for every scale of digital ambition.</p>
+                <div class="packages-grid">
+                    <div class="package-card reveal-item">
+                        <h3>Basic Infrastructure</h3>
+                        <p class="package-tagline">Essential connectivity & foundational support</p>
+                        <div class="package-features">
+                            <ul>
+                                <li>Standard Internet Speed (e.g., 50 Mbps)</li>
+                                <li>Basic Battery Backup (4-6 hours)</li>
+                                <li>Standard LAN Setup (up to 10 nodes)</li>
+                                <li>Email & Phone Support (Business Hours)</li>
+                                <li>Annual System Health Check</li>
+                            </ul>
+                        </div>
+                        <p class="ideal-use"><strong>Ideal for:</strong> Small offices, educational startups, foundational digital presence.</p>
+                        <p class="duration">5-year scope</p>
+                        <p class="cost"></p>
+                        <a href="#contact-trigger" class="btn primary-btn" aria-label="Inquire about Basic Infrastructure package">Inquire for Basic</a>
+                    </div>
+                    <div class="package-card reveal-item featured-package">
+                        <h3>Standard Enterprise</h3>
+                        <p class="package-tagline">Robust performance & enhanced security</p>
+                        <div class="package-features">
+                            <ul>
+                                <li>High-Speed Internet (e.g., 200 Mbps)</li>
+                                <li>Extended Battery Backup (8-12 hours)</li>
+                                <li>LAN/WAN Integration (up to 50 nodes)</li>
+                                <li>Standard Cybersecurity Suite (Firewall, Endpoint)</li>
+                                <li>24/7 Priority Support</li>
+                                <li>Bi-Annual Performance Optimization</li>
+                            </ul>
+                        </div>
+                        <p class="ideal-use"><strong>Ideal for:</strong> Growing businesses, medium-sized institutions, critical operations.</p>
+                        <p class="duration">5-year scope</p>
+                        <p class="cost"></p>
+                        <a href="#contact-trigger" class="btn primary-btn" aria-label="Inquire about Standard Enterprise package">Inquire for Standard</a>
+                    </div>
+                    <div class="package-card reveal-item">
+                        <h3>Premium Platinum</h3>
+                        <p class="package-tagline">Maximized uptime, advanced security & bespoke solutions</p>
+                        <div class="package-features">
+                            <ul>
+                                <li>Ultra-High-Speed Internet (e.g., 1 Gbps)</li>
+                                <li>Comprehensive Power Redundancy (24+ hours)</li>
+                                <li>Complex Network Architecture (100+ nodes)</li>
+                                <li>Advanced Cybersecurity (Threat Intelligence, Training)</li>
+                                <li>Dedicated Account Manager & On-site Support</li>
+                                <li>Quarterly Strategic Review & Future-Proofing</li>
+                            </ul>
+                        </div>
+                        <p class="ideal-use"><strong>Ideal for:</strong> Large enterprises, government agencies, mission-critical infrastructure.</p>
+                        <p class="duration">5-year scope</p>
+                        <p class="cost"></p>
+                        <a href="#contact-trigger" class="btn primary-btn" aria-label="Inquire about Premium Platinum package">Inquire for Premium</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Showcase / Case Studies: Displays past projects with filtering capabilities and detailed modals. -->
+        <section id="projects" class="projects-section section-padding reveal-section">
+            <div class="container">
+                <h2 class="section-title">Our Impactful Projects</h2>
+                <p class="section-subtitle">Real-world solutions, measurable outcomes.</p>
+                <div class="project-filter">
+                    <input type="text" id="project-search" placeholder="Search projects by title or technology..." aria-label="Search projects">
+                    <select id="tech-filter" aria-label="Filter projects by technology">
+                        <option value="">All Technologies</option>
+                    </select>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card" data-project-id="1" data-tech="Internet, CCTV, E-learning">
+                        <img src="https://placehold.co/400x300/6A0DAD/E0E0E0?text=Fudan+University" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="Fudan University IT & E-learning Project Visual" class="project-image">
+                        <div class="project-overlay">
+                            <h3 class="project-title">Fudan University IT & E-learning</h3>
+                            <p class="project-tech-summary">Internet, CCTV, E-learning Software</p>
+                        </div>
+                    </div>
+                     <div class="project-card" data-project-id="2" data-tech="E-learning, Digital Services">
+                        <img src="https://placehold.co/400x300/00E676/0A0A0A?text=Central+Washington+College" onerror="this.onerror=null;this.src='https://placehold.co/400x300/00E676/0A0A0A?text=Project+2';" alt="Central Washington E-learning Project Visual" class="project-image">
+                        <div class="project-overlay">
+                            <h3 class="project-title">Central Washington E-learning</h3>
+                            <p class="project-tech-summary">Digital E-learning Services</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project-id="3" data-tech="Satellite Internet, VSAT, High Speed">
+                        <img src="https://placehold.co/400x300/6A0DAD/E0E0E0?text=Satellite+Internet" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+3';" alt="Central Washington Satellite Internet Project Visual" class="project-image">
+                        <div class="project-overlay">
+                            <h3 class="project-title">Central Washington Satellite Internet</h3>
+                            <p class="project-tech-summary">High-Speed Satellite Internet</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project-id="4" data-tech="Data Center, LAN, WAN, Server">
+                        <img src="https://placehold.co/400x300/00E676/0A0A0A?text=FMST+Data+Center" onerror="this.onerror=null;this.src='https://placehold.co/400x300/00E676/0A0A0A?text=Project+4';" alt="FMST Data Center & Resource Center Project Visual" class="project-image">
+                        <div class="project-overlay">
+                            <h3 class="project-title">FMST Data Center & Resource Center</h3>
+                            <p class="project-tech-summary">Data Center, LAN/WAN, Servers</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project-id="5" data-tech="VSAT, Satellite Communication">
+                        <img src="https://placehold.co/400x300/6A0DAD/E0E0E0?text=Nationwide+VSAT" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+5';" alt="Nationwide VSAT Deployment Project Visual" class="project-image">
+                        <div class="project-overlay">
+                            <h3 class="project-title">Nationwide VSAT Deployment</h3>
+                            <p class="project-tech-summary">VSAT Installation & Activation</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project-id="6" data-tech="Grid Connection, Power, ATS">
+                        <img src="https://placehold.co/400x300/00E676/0A0A0A?text=IHS+Africa+Grid" onerror="this.onerror=null;this.src='https://placehold.co/400x300/00E676/0A0A0A?text=Project+6';" alt="IHS Africa Grid Connection Project Visual" class="project-image">
+                        <div class="project-overlay">
+                            <h3 class="project-title">IHS Africa Grid Connection</h3>
+                            <p class="project-tech-summary">Power Infrastructure, Grid Connection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Detail Modal (Lightbox) -->
+        <div id="project-detail-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+            <div class="modal-content project-modal-content">
+                <button class="close-modal-btn" aria-label="Close project details pop-up">×</button>
+                <div class="modal-body">
+                    <h3 id="modal-project-title" class="modal-title"></h3>
+                    <p id="modal-project-tagline" class="modal-tagline"></p>
+                    <div class="modal-grid">
+                        <div class="modal-text-content">
+                            <h4>Problem Statement:</h4>
+                            <p id="modal-project-problem" class="modal-narrative"></p>
+                            <h4>Solution Architecture:</h4>
+                            <p id="modal-project-solution" class="modal-narrative"></p>
+                            <h4>Key Features Developed:</h4>
+                            <ul id="modal-project-features" class="modal-list"></ul>
+                            <h4>Technical Challenges Overcome:</h4>
+                            <ul id="modal-project-challenges" class="modal-list"></ul>
+                            <h4>Performance Metrics/Scalability:</h4>
+                            <p id="modal-project-metrics" class="modal-narrative"></p>
+                            <div class="project-links">
+                                <a id="modal-project-demo" href="#" target="_blank" class="btn secondary-btn" style="display: none;" aria-label="View live demo of project">Live Demo</a>
+                                <a id="modal-project-github" href="#" target="_blank" class="btn secondary-btn" style="display: none;" aria-label="View more project details">View Details</a>
+                            </div>
+                        </div>
+                        <div class="modal-visual-content">
+                            <div class="tech-mosaic">
+                                <h4>Technology Mosaic:</h4>
+                                <div id="modal-tech-stack" class="tech-badges-container"></div>
+                            </div>
+                            <div class="mockup-gallery">
+                                <h4>Visual Insights:</h4>
+                                <img src="https://placehold.co/400x250/6A0DAD/E0E0E0?text=Mockup+1" onerror="this.onerror=null;this.src='https://placehold.co/400x250/6A0DAD/E0E0E0?text=Mockup+Fallback';" alt="Project Mockup 1" class="mockup-img">
+                                <img src="https://placehold.co/400x250/00E676/0A0A0A?text=Mockup+2" onerror="this.onerror=null;this.src='https://placehold.co/400x250/00E676/0A0A0A?text=Mockup+Fallback';" alt="Project Mockup 2" class="mockup-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cybersecurity & Compliance Section -->
+        <section id="cybersecurity" class="cybersecurity-section section-padding reveal-section">
+            <div class="container">
+                <h2 class="section-title">Cybersecurity & Compliance</h2>
+                <p class="section-subtitle">Ensuring robust security and adherence to industry standards.</p>
+                <div class="compliance-grid">
+                    <div class="compliance-item reveal-item">
+                        <h3>Our Security Approach</h3>
+                        <p>At Kubus Engineering, we prioritize the safety and integrity of your digital assets. We deploy a multi-layered approach to cybersecurity, safeguarding your network and data with robust measures and advanced protocols.</p>
+                        <ul>
+                            <li>Active IOS & ASA Firewall Deployments</li>
+                            <li>Comprehensive Checkpoint Firewall Management</li>
+                            <li>Advanced Antivirus & Endpoint Protection Solutions</li>
+                            <li>Regular Cybersecurity Audits & Vulnerability Assessments</li>
+                        </ul>
+                    </div>
+                    <div class="compliance-item reveal-item">
+                        <h3>Industry Standards & Certifications</h3>
+                        <p>Our team comprises highly certified professionals, ensuring that all solutions align with global best practices and industry compliance requirements.</p>
+                        <div class="certification-logos">
+                            <img src="assets/img/cert-logos/coren.png" onerror="this.onerror=null;this.src='https://placehold.co/80x40/333/E0E0E0?text=COREN';" alt="COREN Certified Logo" class="cert-logo">
+                            <img src="assets/img/cert-logos/cisco.png" onerror="this.onerror=null;this.src='https://placehold.co/80x40/333/E0E0E0?text=Cisco';" alt="Cisco Certified Logo" class="cert-logo">
+                            <img src="assets/img/cert-logos/comptia.png" onerror="this.onerror=null;this.src='https://placehold.co/80x40/333/E0E0E0?text=CompTIA';" alt="CompTIA Certified Logo" class="cert-logo">
+                            <img src="assets/img/cert-logos/microsoft.png" onerror="this.onerror=null;this.src='https://placehold.co/80x40/333/E0E0E0?text=Microsoft';" alt="Microsoft Certified Logo" class="cert-logo">
+                            <img src="assets/img/cert-logos/itil.png" onerror="this.onerror=null;this.src='https://placehold.co/80x40/333/E0E0E0?text=ITIL';" alt="ITIL Certified Logo" class="cert-logo">
+                        </div>
+                        <p>Our staff hold certifications including COREN, NSE, CPN, CCNA, CCNP, CCDA, CompTIA A+, Network+, Security+, Mobility+, MTA, MCSA, MCSE, ITIL, and Symantec.</p>
+                    </div>
+                    <div class="compliance-item reveal-item">
+                        <h3>Regulatory Compliance</h3>
+                        <p>Kubus Engineering is committed to full regulatory compliance, evidenced by our official registrations and certificates:</p>
+                        <ul>
+                            <li>Certificate of Incorporation with CAC (RC: 1629836)</li>
+                            <li>Tax Clearance Certificate</li>
+                            <li>PENCOM Certificate</li>
+                            <li>Industrial Training Fund (ITF) Certificate</li>
+                            <li>Nigeria Social Insurance Trust Fund (NSITF) Certificate</li>
+                            <li>Bureau of Public Procurement (BPP) Certificate</li>
+                        </ul>
+                        <a href="#downloads" class="btn secondary-btn small-btn" aria-label="View compliance certificates">View Certificates</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog/News Section -->
+        <section id="blog" class="blog-section section-padding reveal-section">
+            <div class="container">
+                <h2 class="section-title">Insights & News</h2>
+                <p class="section-subtitle">Stay updated with industry trends and Kubus Engineering's perspectives.</p>
+                <div class="blog-grid">
+                    <article class="blog-post-card reveal-item">
+                        <img src="https://placehold.co/400x250/1A1A1A/E0E0E0?text=Starlink+Future" onerror="this.onerror=null;this.src='https://placehold.co/400x250/1A1A1A/E0E0E0?text=Blog+Image';" alt="Blog Post Image about Starlink" class="blog-image">
+                        <div class="blog-content">
+                            <h3>The Future of Starlink in Rural Connectivity</h3>
+                            <p>Exploring the transformative impact of satellite internet on underserved regions across Africa...</p>
+                            <a href="#" class="read-more-btn" aria-label="Read more about Starlink connectivity">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="blog-post-card reveal-item">
+                        <img src="https://placehold.co/400x250/1A1A1A/E0E0E0?text=Network+Optimization" onerror="this.onerror=null;this.src='https://placehold.co/400x250/1A1A1A/E0E0E0?text=Blog+Image';" alt="Blog Post Image about Network Optimization" class="blog-image">
+                        <div class="blog-content">
+                            <h3>Optimizing Network Performance: Best Practices</h3>
+                            <p>Dive into advanced strategies for ensuring 99.99% network availability and efficiency...</p>
+                            <a href="#" class="read-more-btn" aria-label="Read more about network optimization">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="blog-post-card reveal-item">
+                        <img src="https://placehold.co/400x250/1A1A1A/E0E0E0?text=Cybersecurity+AI" onerror="this.onerror=null;this.src='https://placehold.co/400x250/1A1A1A/E0E0E0?text=Blog+Image';" alt="Blog Post Image about Cybersecurity and AI" class="blog-image">
+                        <div class="blog-content">
+                            <h3>Cybersecurity in the Age of AI: Protecting Your Enterprise</h3>
+                            <p>An in-depth look at AI-driven threat detection and robust security protocols for modern businesses...</p>
+                            <a href="#" class="read-more-btn" aria-label="Read more about cybersecurity and AI">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proposal/Downloads Section -->
+        <section id="downloads" class="downloads-section section-padding reveal-section">
+            <div class="container">
+                <h2 class="section-title">Downloads & Resources</h2>
+                <p class="section-subtitle">Access our corporate documents and information sheets.</p>
+                <div class="downloads-grid">
+                    <div class="download-item reveal-item">
+                        <img src="assets/svg/icon-pdf.svg" onerror="this.onerror=null; this.src='https://placehold.co/60x60/333/E0E0E0?text=PDF';" alt="PDF Icon" class="download-icon">
+                        <h3>Corporate Profile (PDF)</h3>
+                        <p>Our comprehensive company profile, detailing our services, expertise, and history.</p>
+                        <a href="BVT Profile_Latest.pdf" target="_blank" class="btn secondary-btn small-btn" aria-label="Download Corporate Profile PDF">Download PDF</a>
+                    </div>
+                    <div class="download-item reveal-item">
+                        <img src="assets/svg/icon-brochure.svg" onerror="this.onerror=null; this.src='https://placehold.co/60x60/333/E0E0E0?text=Brochure';" alt="Brochure Icon" class="download-icon">
+                        <h3>Services Brochure</h3>
+                        <p>A concise overview of all Kubus Engineering's service offerings.</p>
+                        <a href="#" class="btn secondary-btn small-btn disabled" aria-disabled="true" aria-label="Services Brochure coming soon">Coming Soon</a>
+                    </div>
+                    <div class="download-item reveal-item">
+                        <img src="assets/svg/icon-packages.svg" onerror="this.onerror=null; this.src='https://placehold.co/60x60/333/E0E0E0?text=Packages';" alt="Packages Icon" class="download-icon">
+                        <h3>Package Info Sheets</h3>
+                        <p>Detailed breakdown of our Premium, Standard, and Basic service packages.</p>
+                        <a href="#" class="btn secondary-btn small-btn disabled" aria-disabled="true" aria-label="Package Info Sheets coming soon">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Careers / Work With Us Section -->
+        <section id="careers" class="careers-section section-padding reveal-section">
+            <div class="container">
+                <h2 class="section-title">Join Our Team</h2>
+                <p class="section-subtitle">Innovate, grow, and make an impact with Kubus Engineering.</p>
+                <div class="careers-content">
+                    <div class="career-text reveal-item">
+                        <p>At Kubus Engineering, we believe our personnel are our greatest asset. We are always looking for talented and passionate individuals to join our team of seasoned professionals. If you are driven by excellence, integrity, and a desire to bridge the digital divide in Africa, we encourage you to explore opportunities with us.</p>
+                        <p>We foster a culture of continuous learning and development, providing our team members with the tools and training necessary to stay at the forefront of technology and deliver outstanding services.</p>
+                    </div>
+                    <div class="career-opportunities-grid">
+                        <div class="opportunity-card reveal-item">
+                            <h3>Job Openings</h3>
+                            <p>Explore current full-time positions available across our various departments in Enugu, Lagos, and Abuja.</p>
+                            <a href="#" class="btn secondary-btn small-btn disabled" aria-disabled="true" aria-label="View job openings">View Openings</a>
+                        </div>
+                        <div class="opportunity-card reveal-item">
+                            <h3>Partner Opportunities</h3>
+                            <p>Interested in collaborating? We welcome partnerships with technology providers and industry experts.</p>
+                            <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Become a partner with Kubus Engineering">Become a Partner</a>
+                        </div>
+                        <div class="opportunity-card reveal-item">
+                            <h3>Internship Programs</h3>
+                            <p>Gain hands-on experience and mentorship through our structured internship programs for aspiring engineers.</p>
+                            <a href="#" class="btn secondary-btn small-btn disabled" aria-disabled="true" aria-label="Apply for internship programs">Apply for Internships</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact-trigger" class="contact-trigger-section reveal-section">
+            <div class="container text-center">
+                <h2 class="section-title">Connect With Kubus Engineering</h2>
+                <p class="section-subtitle">Ready to transform your vision into an engineered reality? Initiate a secure consultation with our experts today.</p>
+                <button class="btn primary-btn open-contact-modal" aria-label="Request a technical consultation">REQUEST CONSULTATION</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+        <div class="modal-content">
+            <button class="close-modal-btn" aria-label="Close contact form">×</button>
+            <div class="modal-body">
+                <h3 id="contact-modal-title" class="modal-title">Secure Consultation Request</h3>
+                <p class="modal-tagline">Tell us about your project or technical challenge, and we'll connect with you promptly.</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="e.g., user@example.com" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject of Inquiry:</label>
+                        <input type="text" id="subject" name="subject" placeholder="e.g., Network Design, Solar Installation, Cybersecurity">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Detailed Request:</label>
+                        <textarea id="message" name="message" rows="7" required placeholder="Describe your project, technical challenge, or consultation needs." aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="btn secondary-btn">SEND CONSULTATION REQUEST</button>
+                </form>
+                <div class="contact-info-section">
+                    <h4>Our Offices:</h4>
+                    <p><strong>Enugu:</strong> Bright Value Resort, No 1 Asaba lane by Richard street, Off Ogui road, Enugu State Nigeria. <strong>Phone:</strong> <a href="tel:+2348115965555">08115965555</a></p>
+                    <p><strong>Lagos:</strong> Suite 18/19 Road 1 Ikota Complex, VGC Ajah Lagos. <strong>Phone:</strong> <a href="tel:+2348098648083">08098648083</a></p>
+                    <p><strong>Abuja:</strong> No 23 Blantyre crescent Wuse 2, 2nd Floor, Barcelona Hotel, Beside Amigos Supermarket, Abuja. <strong>Phone:</strong> <a href="tel:+2349027680333">09027680333</a>, <a href="tel:+2349033815583">09033815583</a>, <a href="tel:+2348098648083">08098648083</a></p>
+                    <div class="map-placeholder">
+                        <a href="https://www.google.com/maps/search/Kubus+Engineering+Abuja" target="_blank" aria-label="View Kubus Engineering Abuja office on Google Maps">
+                            <img src="https://placehold.co/600x300/1A1A1A/E0E0E0?text=Google+Map+Placeholder" alt="Map of Kubus Engineering Offices" style="width:100%; height:auto; border-radius: 8px;">
+                        </a>
+                        <p class="map-note">Map locations available upon request for precise navigation.</p>
+                    </div>
+                    <p class="whatsapp-note">For urgent inquiries, <a href="https://wa.me/2349027680333" target="_blank" style="color:var(--secondary-accent-color);" aria-label="Chat with Kubus Engineering on WhatsApp">chat with us on WhatsApp</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; <span id="copy-right">new Date().getFullYear();</span> Kubus Engineering. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a href="#" aria-label="Terms of Service">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Your Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
