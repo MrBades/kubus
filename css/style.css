@@ -142,11 +142,11 @@ body.nav-active .nav-toggle .bar:nth-child(3) { transform: translateY(-10px) rot
     position: fixed;
     top: 0;
     right: 0;
-    width: min(75vw, 400px);
-    height: 100%;
+    width: min(75vw, 300px);
+    height: 100vh;
     background-color: var(--surface-color);
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
-    padding: 100px 30px 30px;
+    padding: 0px 30px 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -166,6 +166,7 @@ body.nav-active .nav-links { transform: translateX(0); }
     opacity: 0;
     transform: translateX(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
+	margin:0;
 }
 .main-nav .nav-links li::before { display: none; }
 
@@ -281,7 +282,7 @@ body.nav-active .menu-overlay {
         padding: 0;
         flex-direction: row;
         align-items: center;
-        gap: 0.5rem; /* REDUCED gap for desktop nav */
+        gap: 0.125rem; /* REDUCED gap for desktop nav */
         transform: none;
     }
 
@@ -289,8 +290,8 @@ body.nav-active .menu-overlay {
     
     .main-nav .nav-links a {
         font-size: 0.85rem;
-        font-weight: 500;
-        padding: 0.4rem 0.8rem; /* REDUCED padding for desktop nav */
+        font-weight: 900;
+        padding: 0.4rem 0.5rem; /* REDUCED padding for desktop nav */
         border-radius: 20px;
         color: var(--text-color-light);
     }
@@ -389,7 +390,7 @@ body.light-mode .about-history, body.light-mode .about-mission-vision, body.ligh
 .about-team .team-member:hover { transform: translateY(-3px); box-shadow: 0 4px 15px var(--accent-glow-color); }
 .about-team .team-member h4 { color: var(--accent-color); margin-bottom: var(--spacing-xs); font-family: var(--font-primary); font-size: 1.1rem; }
 .about-team .team-member p { font-size: 0.85rem; color: var(--text-color-light); }
-.member-photo-placeholder { width: 70px; height: 70px; background-color: var(--border-color); border-radius: 50%; margin-bottom: var(--spacing-sm); display: inline-block; vertical-align: middle; }
+.member-photo-placeholder { width: 80px; height: 100px; background-color: var(--border-color); border-radius: 5%; margin-bottom: var(--spacing-sm); display: inline-block; vertical-align: middle; }
 
 /* --- Services Section --- */
 .service-category-grid { display: grid; grid-template-columns: 1fr; gap: var(--spacing-lg); margin-top: var(--spacing-xl); }
