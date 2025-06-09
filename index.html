@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kubus Engineering // Powering Digital Infrastructure Across Africa</title>
     <link rel="stylesheet" href="css/style.css">
+	<link rel='icon' type='image/png' href='img/k-logo.png'>
     <!-- Elegant Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -76,7 +77,26 @@
     <main>
         <!-- Home Page: Interactive Hero Section -->
         <section id="hero" class="hero-section">
-            <div id="particles-js" class="particles-container"></div>
+            <div id="particles-js" class="particles-container">
+				<!-- LOADING SCREEN: This is still important -->
+				<div class="loading-screen">
+					<div class="spinner"></div>
+					<p>Loading Assets (0%)</p>
+				</div>
+
+				<!-- This container will hold and CLIP our images. -->
+				<div class="image-container">
+					<!-- Images will be added here by JavaScript -->
+				</div>
+
+				<!-- The content below will not be shown in this looping version,
+					 but we can leave it here for future use. -->
+				<main class="scroll-content">
+					<section class="intro">
+						<h1>Presentation</h1>
+					</section>
+				</main>
+			</div>
             <div class="hero-content">
                 <h1 class="hero-headline">Powering Digital Infrastructure Across Africa.</h1>
                 <p class="hero-subline">Trusted partners dedicated to bridging the digital divide, leveraging seasoned experts and international collaborations.</p>
@@ -86,6 +106,10 @@
                 </div>
                 <a href="#services" class="scroll-down-btn" aria-label="Scroll down to explore our expertise">Explore Our Expertise <span class="arrow">↓</span></a>
             </div>
+			
+			
+
+	
         </section>
 
         <!-- About Us Section: Provides company history, mission, vision, and team details. -->
@@ -568,6 +592,8 @@
     </footer>
 
     <!-- External Libraries -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+	<script src="js/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <!-- Your Custom JavaScript -->
     <script src="js/main.js"></script>
