@@ -595,3 +595,112 @@ body.light-mode .about-history, body.light-mode .about-mission-vision, body.ligh
     opacity: 1;
     border-color: var(--secondary-accent-color);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Loading Screen Styles (Unchanged) --- */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #444;
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+.loading-screen p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #aaa;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 
+==============================================
+   CORRECTED MAIN ANIMATION STYLES
+==============================================
+*/
+.image-container {
+    top: 0;
+    left: 0;
+    width: 100%; /* CHANGED: Cover full viewport width */
+    height: 100vh; /* CHANGED: Cover full viewport height */
+    z-index: 1; /* This is correctly below the header (z-index: 1000) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    overflow: hidden; /* Clips the images so they don't show outside the container */
+	object-fit: cover;
+}
+.kubus-on-slider, .engr-on-slider{
+	position: absolute;
+	color: red;
+    z-index: 1000;
+}
+
+.image-container img {
+    position: absolute;
+    width: 100%;  /* CHANGED: Force image to fill container width */
+    height: 100%; /* CHANGED: Force image to fill container height */
+	object-fit: cover; /* Ensures image covers without distortion */
+    opacity: 0; /* Start invisible */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 8px;
+	filter: blur(5px);
+	object-fit: cover;
+}
+
+/* Hide the scrollable content since we are looping */
+.scroll-content {
+    display: none;
+}
