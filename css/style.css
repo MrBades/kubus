@@ -14,8 +14,10 @@ The accent color is now also a variable that can be changed by the user.
     /* --- Base Color System (Defaults to Dark Mode) --- */
     --background-color: #0A0A0A;
     --surface-color: #1A1A1A;
-    --text-color: #E0E0E0;
-    --text-color-light: #A0A0A0;
+    /* --text-color: #E0E0E0; */
+    --text-color: #ffffff;
+    /* --text-color-light: #A0A0A0; */
+    --text-color-light: #ffffff;
     --border-color: #333333;
     --hero-headline-color: #FFFFFF;
     --selection-text-color: #FFFFFF;
@@ -23,7 +25,7 @@ The accent color is now also a variable that can be changed by the user.
     /* --- Accent Color System (User-configurable) --- */
     --accent-color: #007bff; /* This will be updated by JS */
     --accent-glow-color: rgba(0, 123, 255, 0.4); /* This will be updated by JS */
-    --accent-text-color: #FFFFFF; /* Contrast color for text on accent backgrounds, updated by JS */
+    --accent-text-color: #ffffff; /* Contrast color for text on accent backgrounds, updated by JS */
     --secondary-accent-color: #28a745;
 
     /* --- Typography & Spacing (Unchanged) --- */
@@ -648,6 +650,7 @@ body.light-mode .about-history, body.light-mode .about-mission-vision, body.ligh
     transition: opacity 0.5s ease;
 }
 .spinner {
+	opacity: 0;
     width: 50px;
     height: 50px;
     border: 5px solid #444;
@@ -656,6 +659,7 @@ body.light-mode .about-history, body.light-mode .about-mission-vision, body.ligh
     animation: spin 1s linear infinite;
 }
 .loading-screen p {
+	opacity: 0;
     margin-top: 20px;
     font-size: 1.2rem;
     color: #aaa;
