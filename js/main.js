@@ -245,103 +245,93 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================
     //    Image Slider Animation (With Loading Screen)
     // ==========================================================
-    const loadingScreen = document.querySelector('.loading-screen'); // Re-added
-    const loadingText = document.querySelector('.loading-screen p');   // Re-added
+ const loadingScreen = document.querySelector('.loading-screen');
+    const loadingText = document.querySelector('.loading-screen p');
     const imageContainer = document.querySelector('.image-container');
 
-    const imageCount = 18;
+    // --- Configuration ---
+    const imageCount = 33;
     const imageBaseName = 'pic';
     const imageExtension = 'jpg';
     const imageFolderPath = 'img/hero/';
+	imageContainer.src = `${imageFolderPath}${imageBaseName}(${10}).${imageExtension}`;
 
-    const promises = [];
-    let loadedCount = 0; // Re-added
+    // --- State Variables ---
+    let loadedCount = 0;
+    let isAnimationStarted = false; // Flag to ensure we only hide the loading screen once
 
+    // --- Main Loading Loop ---
     for (let i = 1; i <= imageCount; i++) {
         const img = new Image();
-        const promise = new Promise((resolve, reject) => {
-            img.onload = () => {
-                loadedCount++; // Update loaded count
-                loadingText.textContent = `Loading Assets (${Math.round((loadedCount / imageCount) * 100)}%)`; // Update text
-                resolve(img);
-            };
-            img.onerror = reject;
-        });
+        img.classList.add('scroll-image'); 
+        img.style.opacity = 0; // Hide image until it animates
+
+        // img.onload runs for EACH image as soon as it's ready. NO WAITING.
+        img.onload = () => {
+            loadedCount++;
+            loadingText.textContent = `Loading Assets (${Math.round((loadedCount / imageCount) * 100)}%)`;
+            imageContainer.appendChild(img);
+            
+            // If this is the VERY FIRST image to load, hide the loading screen.
+            if (!isAnimationStarted) {
+                isAnimationStarted = true; // This now prevents this block from running again
+                
+                if (typeof gsap !== 'undefined') {
+                    // Fade out the loading screen immediately
+                    gsap.to(loadingScreen, {
+                        opacity: 0,
+                        duration: 1.0,
+                        onComplete: () => { loadingScreen.style.display = 'none'; }
+                    });
+                } else {
+                    console.error("GSAP library is not defined. Animations cannot start.");
+                    loadingScreen.style.display = 'none';
+                }
+            }
+
+            // Animate THIS specific image right away.
+            if (typeof gsap !== 'undefined') {
+                 animateImage(img);
+            }
+        };
+
+        img.onerror = () => {
+            loadedCount++;
+            console.error(`Failed to load image: ${imageFolderPath}${imageBaseName}(${i}).${imageExtension}`);
+            loadingText.textContent = `Loading Assets (${Math.round((loadedCount / imageCount) * 100)}%)`;
+        };
+
+        // This starts loading the image from your local 'img/hero/' folder
         img.src = `${imageFolderPath}${imageBaseName}(${i}).${imageExtension}`;
-        promises.push(promise);
-        img.classList.add('scroll-image');
-        imageContainer.appendChild(img);
     }
 
-    Promise.all(promises)
-        .then(loadedImages => {
-            // Check if GSAP is available before calling startAnimation
-            if (typeof gsap !== 'undefined') {
-                startAnimation(loadedImages);
-            } else {
-                console.error("GSAP library is not defined. Animation cannot start.");
-                loadingText.textContent = "Error: Animation library not loaded.";
-                // Optionally, hide loading screen even if GSAP fails, after a short delay
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                }, 2000);
+    /**
+     * Creates an independent, repeating animation for a single image element.
+     * @param {HTMLImageElement} image - The image element to animate.
+     */
+    function animateImage(image) {
+        const getStartPosition = () => {
+            const side = Math.floor(Math.random() * 4);
+            const distance = window.innerWidth * 0.7;
+            switch (side) {
+                case 0: return { x: -distance, y: 0 };
+                case 1: return { x: distance, y: 0 };
+                case 2: return { y: -distance, x: 0 };
+                case 3: return { y: distance, x: 0 };
             }
-        })
-        .catch(error => {
-            console.error("Error loading one or more images.", error);
-            loadingText.textContent = "Error loading images. Please check console."; // Display error
-        });
+        };
 
-    function startAnimation(allImages) {
-        gsap.to(loadingScreen, { // Fade out loading screen
-            opacity: 0,
-            duration: 0.5,
-            onComplete: () => loadingScreen.style.display = 'none'
-        });
-
-        const masterTimeline = gsap.timeline({
-            delay: 0.5, // Delay added to allow loading screen to fade out
+        const tl = gsap.timeline({
             repeat: -1,
-            repeatDelay: 1.5
+            repeatDelay: 1.0,
+            delay: Math.random() * 2
         });
 
-        allImages.forEach((image) => {
-            const getStartPosition = () => {
-                const side = Math.floor(Math.random() * 4);
-                const distance = window.innerWidth * 0.7;
-                switch (side) {
-                    case 0: return { x: -distance, y: 0 };
-                    case 1: return { x: distance, y: 0 };
-                    case 2: return { y: -distance, x: 0 };
-                    case 3: return { y: distance, x: 0 };
-                }
-            };
-
-            masterTimeline
-                .fromTo(image,
-                    {
-                        ...getStartPosition(),
-                        rotation: (Math.random() - 0.5) * 45,
-                        scale: 0.8,
-                        opacity: 0,
-                    },
-                    {
-                        x: 0, y: 0, rotation: 0, scale: 1, opacity: 1,
-                        duration: 0.7,
-                        ease: "power2.out"
-                    }
-                )
-                .to(image, {
-                    scale: 1.15,
-                    rotation: (Math.random() - 0.5) * 10,
-                    duration: 1.5,
-                    ease: "sine.inOut", yoyo: true, repeat: 1
-                }, ">-0.2")
-                .to(image, {
-                    opacity: 0, scale: 0.8,
-                    duration: 0.5,
-                    ease: "power2.in"
-                }, ">-0.4");
-        });
+        tl.fromTo(image, 
+            { ...getStartPosition(), rotation: (Math.random() - 0.5) * 45, scale: 0.8, opacity: 0, },
+            { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1, duration: 1.2, ease: "power2.out" }
+        )
+        .to(image, { scale: 1.15, rotation: (Math.random() - 0.5) * 10, duration: 3, ease: "sine.inOut", yoyo: true, repeat: 1 }, ">-0.4")
+        .to(image, { opacity: 0, scale: 0.8, duration: 0.8, ease: "power2.in" }, ">-0.4");
     }
 });
