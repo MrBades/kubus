@@ -71,6 +71,8 @@ body {
 }
 
 body.nav-active { overflow: hidden; }
+/* Added to handle scroll lock for detail view */
+body.detail-view-active { overflow: hidden; }
 
 .container {
     width: 90%;
@@ -148,7 +150,7 @@ body.nav-active .nav-toggle .bar:nth-child(3) { transform: translateY(-10px) rot
     height: 100vh;
     background-color: var(--surface-color);
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
-    padding: 0px 30px 30px;
+    padding: 80px 30px 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -327,6 +329,22 @@ The following styles for hero, sections, cards, modals, etc.,
 are from your original file to preserve structure and animations.
 Only their color properties have been replaced with the new CSS variables.
 */
+
+/* In your style.css file or a <style> block in your HTML head */
+
+/* Initially hide all sections with the 'reveal-section' class */
+.reveal-section {
+    display: none;
+    /* Optional: Add a smooth transition for fading in/out */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* When a section is active/visible, set its display and opacity */
+.reveal-section.active {
+    display: block; /* Or 'flex' or 'grid' depending on your layout */
+    opacity: 1;
+}
 
 /* --- Global Typography --- */
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--text-color); margin-top: 0; margin-bottom: var(--spacing-sm); line-height: 1.2; transition: color var(--transition-speed); }
@@ -598,42 +616,6 @@ body.light-mode .about-history, body.light-mode .about-mission-vision, body.ligh
     border-color: var(--secondary-accent-color);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* --- Loading Screen Styles (Unchanged) --- */
 .loading-screen {
     position: fixed;
@@ -707,4 +689,159 @@ body.light-mode .about-history, body.light-mode .about-mission-vision, body.ligh
 /* Hide the scrollable content since we are looping */
 .scroll-content {
     display: none;
+}
+
+
+/* 
+==============================================
+   NEW STYLES FOR DETAIL VIEW
+==============================================
+*/
+
+/* Clickable Card Indication */
+.clickable-card {
+    cursor: pointer;
+}
+.clickable-card:hover {
+    border-color: var(--secondary-accent-color) !important;
+    transform: translateY(-7px) !important;
+}
+
+
+/* Detail View Container */
+.detail-view-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    z-index: 1500; /* Above header, below modals */
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.detail-view-container.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Back Button */
+#back-to-main-btn {
+    position: fixed;
+    top: 30px; /* Below header */
+    left: var(--spacing-lg);
+    z-index: 1501;
+}
+
+/* Individual Detail Sections */
+.detail-section {
+    display: none; /* All sections inside the container are hidden */
+    padding: var(--spacing-xxxl) 0 var(--spacing-xxl);
+}
+
+.detail-section.visible {
+    display: block; /* Only the active one is shown */
+    animation: fadeInDetailContent 0.5s 0.2s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInDetailContent {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.detail-title {
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-color-light);
+    margin-bottom: var(--spacing-xl);
+}
+
+.detail-content-wrapper {
+    max-width: 960px;
+    margin: auto;
+}
+
+/* Profile Layout */
+.profile-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+}
+.profile-image-container {
+    text-align: center;
+}
+.profile-image-container img {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 3px solid var(--border-color);
+}
+.profile-text-content h3 {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+}
+.profile-role {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--secondary-accent-color);
+    margin-top: -10px;
+    margin-bottom: var(--spacing-md);
+}
+.profile-bio {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+.profile-text-content h4 {
+    margin-top: var(--spacing-lg);
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-xs);
+}
+.profile-text-content ul {
+    margin-top: var(--spacing-sm);
+}
+
+/* Service Layout */
+.service-layout h3 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    text-align: center;
+}
+.service-overview {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--text-color-light);
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+}
+.service-layout h4 {
+    margin-top: var(--spacing-xl);
+    color: var(--secondary-accent-color);
+    font-size: 1.4rem;
+}
+.service-layout ul {
+    margin-top: var(--spacing-sm);
+}
+.service-layout ul li {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+    #back-to-main-btn {
+        top: 30px;
+    }
+    .profile-layout {
+        grid-template-columns: 250px 1fr;
+        gap: var(--spacing-xl);
+    }
 }
