@@ -3,51 +3,89 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('copy-right').textContent = new Date().getFullYear();
     const root = document.documentElement;
     const body = document.body;
+    const mainHeader = document.querySelector('.main-header');
+    const mainContentSections = document.querySelectorAll('main > .section-padding');
+    const navLinksForHighlight = document.querySelectorAll('.main-nav .nav-links a');
 
     // --- Reworked Mobile Navigation Toggle ---
     const navToggle = document.querySelector('.nav-toggle');
     const menuOverlay = document.querySelector('.menu-overlay');
-    const navMenuLinks = document.querySelectorAll('.main-nav .nav-links a');
     const toggleNav = () => body.classList.toggle('nav-active');
     navToggle.addEventListener('click', (e) => { e.stopPropagation(); toggleNav(); });
     menuOverlay.addEventListener('click', () => { if (body.classList.contains('nav-active')) toggleNav(); });
-    navMenuLinks.forEach(link => {
-        // Exclude the controls container from closing the nav
+    navLinksForHighlight.forEach(link => {
         if (!link.closest('.nav-controls-container')) {
             link.addEventListener('click', () => { if (body.classList.contains('nav-active')) setTimeout(toggleNav, 150); });
         }
     });
     
-    // --- Smooth Scrolling for All Anchor Links ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#contact-trigger') {
-                e.preventDefault();
-                document.getElementById('contact-modal').classList.add('active');
-                body.style.overflow = 'hidden';
-                return;
-            }
-            if (targetId === '#' || !document.querySelector(targetId)) return;
-            e.preventDefault();
+    // ==========================================================
+    //    NEW: SPA-LIKE SECTION NAVIGATION
+    // ==========================================================
+    const showMainSection = (targetId) => {
+        // Hide all main sections
+        mainContentSections.forEach(section => {
+            section.classList.remove('active-section');
+        });
+
+        // Show the target section if it's not the hero
+        if (targetId && targetId !== '#hero') {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                const headerOffset = document.querySelector('.main-header').offsetHeight;
+                targetElement.classList.add('active-section');
+                // Scroll to the top of the new section
+                const headerOffset = mainHeader.offsetHeight;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                 window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
             }
+        } else {
+            // If it's the hero link, just scroll to the top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
+    const updateActiveNavLink = (targetHref) => {
+        navLinksForHighlight.forEach(link => {
+            link.classList.remove('active-link');
+            if (link.getAttribute('href') === targetHref) {
+                link.classList.add('active-link');
+            }
+        });
+    };
+
+    // Attach event listeners to all navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+
+            if (targetId === '#contact-trigger' || this.classList.contains('open-contact-modal')) {
+                // First, show the contact section
+                showMainSection('#contact-trigger');
+                // Then, open the contact modal
+                document.getElementById('contact-modal').classList.add('active');
+                if (!body.classList.contains('detail-view-active')) {
+                    body.style.overflow = 'hidden';
+                }
+                // Update nav link highlighting
+                updateActiveNavLink('#contact-trigger');
+            } else {
+                // Handle all other section navigation
+                showMainSection(targetId);
+                updateActiveNavLink(targetId);
+            }
         });
     });
+
     
     // ==========================================================
-    //    NEW & REWORKED THEME AND COLOR PICKER LOGIC
+    //    THEME AND COLOR PICKER LOGIC (Unchanged)
     // ==========================================================
     const themeToggle = document.getElementById('theme-toggle');
     const accentColorPicker = document.getElementById('accent-color-picker');
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // --- Accent Color Functions ---
     const hexToRgb = (hex) => {
         let r = 0, g = 0, b = 0;
         if (hex.length == 4) {
@@ -77,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('userAccentColor', color);
     };
 
-    // --- Theme (Dark/Light Mode) Function ---
     const applyTheme = (theme) => {
         if (theme === 'light') {
             body.classList.add('light-mode');
@@ -87,8 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', theme);
 
         setTimeout(() => {
-            // This part was for particles.js. Since we are removing particles.js,
-            // this block can also be removed if particles.js is not used elsewhere.
             if (window.pJSDom && window.pJSDom[0]) {
                 const particles = window.pJSDom[0].pJS.particles;
                 const newColor = getComputedStyle(body).getPropertyValue('--text-color').trim();
@@ -99,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 0);
     };
     
-    // --- Event Listeners ---
     themeToggle.addEventListener('click', () => {
         const newTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
         applyTheme(newTheme);
@@ -115,7 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Initial Load ---
     const loadUserPreferences = () => {
         const savedTheme = localStorage.getItem('theme') || (prefersDarkMode.matches ? 'dark' : 'light');
         const savedAccentColor = localStorage.getItem('userAccentColor') || '#007BFF';
@@ -127,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadUserPreferences();
 
     // ==========================================================
-    //    UNCHANGED MAIN CONTENT JAVASCRIPT
+    //    REMAINING JAVASCRIPT LOGIC (Unchanged)
     // ==========================================================
     
     // --- Project Detail Modal Logic ---
@@ -170,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = (modal) => {
         if(modal) {
             modal.classList.remove('active');
-            if (!document.querySelector('.modal.active')) {
+            if (!document.querySelector('.modal.active') && !body.classList.contains('detail-view-active')) {
                 body.style.overflow = '';
             }
         }
@@ -195,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
         });
     }
-
+    
     // --- Scroll-Triggered Reveal Animations ---
     const revealElements = document.querySelectorAll('.reveal-section, .reveal-item');
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -207,28 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
     revealElements.forEach(el => revealObserver.observe(el));
-
-    // --- Active Navigation Link on Scroll ---
-    const sectionsForNav = document.querySelectorAll('main section[id]');
-    const navLinksForHighlight = document.querySelectorAll('.main-nav .nav-links a');
-    const highlightNavLink = () => {
-        let fromTop = window.scrollY + document.querySelector('.main-header').offsetHeight + 50;
-        let currentSectionId = '';
-        sectionsForNav.forEach(section => {
-            if (section.offsetTop <= fromTop && (section.offsetTop + section.offsetHeight) > fromTop) {
-                currentSectionId = section.id;
-            }
-        });
-        navLinksForHighlight.forEach(link => {
-            link.classList.remove('active-link');
-            if (link.getAttribute('href') === `#${currentSectionId}`) {
-                link.classList.add('active-link');
-            }
-        });
-    };
-    window.addEventListener('scroll', highlightNavLink);
-    highlightNavLink();
-
+    
     // --- Custom Cursor ---
     const customCursor = document.createElement('div');
     customCursor.classList.add('custom-cursor');
@@ -237,32 +249,27 @@ document.addEventListener('DOMContentLoaded', () => {
         customCursor.style.left = `${e.clientX}px`;
         customCursor.style.top = `${e.clientY}px`;
     });
-    document.querySelectorAll('a, button, .project-card, .nav-toggle, .color-picker-label').forEach(el => {
+    document.querySelectorAll('a, button, .project-card, .clickable-card, .nav-toggle, .color-picker-label').forEach(el => {
         el.addEventListener('mouseenter', () => customCursor.classList.add('active'));
         el.addEventListener('mouseleave', () => customCursor.classList.remove('active'));
     });
 
-  // ==========================================================Add commentMore actions
-    //    Image Slider Animation (With Loading Screen)
-    // ==========================================================
-    const loadingScreen = document.querySelector('.loading-screen'); // Re-added
-    const loadingText = document.querySelector('.loading-screen p');   // Re-added
+    // --- Image Slider Animation ---
+    const loadingScreen = document.querySelector('.loading-screen');
+    const loadingText = document.querySelector('.loading-screen p');
     const imageContainer = document.querySelector('.image-container');
-
     const imageCount = 18;
     const imageBaseName = 'pic';
     const imageExtension = 'jpg';
     const imageFolderPath = 'img/hero/';
-
     const promises = [];
-    let loadedCount = 0; // Re-added
-
+    let loadedCount = 0;
     for (let i = 1; i <= imageCount; i++) {
         const img = new Image();
         const promise = new Promise((resolve, reject) => {
             img.onload = () => {
-                loadedCount++; // Update loaded count
-                loadingText.textContent = `Loading Assets (${Math.round((loadedCount / imageCount) * 100)}%)`; // Update text
+                loadedCount++;
+                loadingText.textContent = `Loading Assets (${Math.round((loadedCount / imageCount) * 100)}%)`;
                 resolve(img);
             };
             img.onerror = reject;
@@ -272,39 +279,24 @@ document.addEventListener('DOMContentLoaded', () => {
         img.classList.add('scroll-image');
         imageContainer.appendChild(img);
     }
-
     Promise.all(promises)
         .then(loadedImages => {
-            // Check if GSAP is available before calling startAnimation
             if (typeof gsap !== 'undefined') {
                 startAnimation(loadedImages);
             } else {
-                console.error("GSAP library is not defined. Animation cannot start.");
+                console.error("GSAP library is not defined.");
                 loadingText.textContent = "Error: Animation library not loaded.";
-                // Optionally, hide loading screen even if GSAP fails, after a short delay
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                }, 2000);
+                setTimeout(() => { loadingScreen.style.display = 'none'; }, 2000);
             }
         })
         .catch(error => {
-            console.error("Error loading one or more images.", error);
-            loadingText.textContent = "Error loading images. Please check console."; // Display error
+            console.error("Error loading images.", error);
+            loadingText.textContent = "Error loading images.";
         });
 
     function startAnimation(allImages) {
-        gsap.to(loadingScreen, { // Fade out loading screen
-            opacity: 0,
-            duration: 0.5,
-            onComplete: () => loadingScreen.style.display = 'none'
-        });
-
-        const masterTimeline = gsap.timeline({
-            delay: 0.5, // Delay added to allow loading screen to fade out
-            repeat: -1,
-            repeatDelay: 1.5
-        });
-
+        gsap.to(loadingScreen, { opacity: 0, duration: 0.5, onComplete: () => loadingScreen.style.display = 'none' });
+        const masterTimeline = gsap.timeline({ delay: 0.5, repeat: -1, repeatDelay: 1.5 });
         allImages.forEach((image) => {
             const getStartPosition = () => {
                 const side = Math.floor(Math.random() * 4);
@@ -316,32 +308,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     case 3: return { y: distance, x: 0 };
                 }
             };
-
             masterTimeline
-                .fromTo(image,
-                    {
-                        ...getStartPosition(),
-                        rotation: (Math.random() - 0.5) * 45,
-                        scale: 0.8,
-                        opacity: 0,
-                    },
-                    {
-                        x: 0, y: 0, rotation: 0, scale: 1, opacity: 1,
-                        duration: 0.7,
-                        ease: "power2.out"
-                    }
-                )
-                .to(image, {
-                    scale: 1.15,
-                    rotation: (Math.random() - 0.5) * 10,
-                    duration: 1.5,
-                    ease: "sine.inOut", yoyo: true, repeat: 1
-                }, ">-0.2")
-                .to(image, {
-                    opacity: 0, scale: 0.8,
-                    duration: 0.5,
-                    ease: "power2.in"
-                }, ">-0.4");
+                .fromTo(image, { ...getStartPosition(), rotation: (Math.random() - 0.5) * 45, scale: 0.8, opacity: 0, }, { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1, duration: 0.7, ease: "power2.out" })
+                .to(image, { scale: 1.15, rotation: (Math.random() - 0.5) * 10, duration: 1.5, ease: "sine.inOut", yoyo: true, repeat: 1 }, ">-0.2")
+                .to(image, { opacity: 0, scale: 0.8, duration: 0.5, ease: "power2.in" }, ">-0.4");
         });
     }
+
+    // --- Detail View (Profiles & Services) Logic ---
+    const detailViewContainer = document.getElementById('detail-view-container');
+    const clickableCards = document.querySelectorAll('.clickable-card');
+    const backToMainBtn = document.getElementById('back-to-main-btn');
+    const allDetailSections = detailViewContainer.querySelectorAll('.detail-section');
+    clickableCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') { return; }
+            const targetId = card.dataset.target;
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                detailViewContainer.classList.add('active');
+                body.classList.add('detail-view-active');
+                allDetailSections.forEach(section => section.classList.remove('visible'));
+                targetSection.classList.add('visible');
+                detailViewContainer.scrollTop = 0;
+            }
+        });
+    });
+    backToMainBtn.addEventListener('click', () => {
+        detailViewContainer.classList.remove('active');
+        body.classList.remove('detail-view-active');
+    });
+
 });
