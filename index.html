@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kubus Engineering // Powering Digital Infrastructure Across Africa</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sectioncontrol.css.css">
 	<link rel='icon' type='image/png' href='img/k-logo.PNG'>
     <!-- Elegant Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
@@ -23,7 +24,7 @@
             </button>
             <!-- Navigation Links -->
             <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
+                <li><a href="#hero" class="active-link">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#packages">Packages</a></li>
@@ -106,10 +107,6 @@
                 </div>
                 <a href="#services" class="scroll-down-btn" aria-label="Scroll down to explore our expertise">Explore Our Expertise <span class="arrow">↓</span></a>
             </div>
-			
-			
-
-	
         </section>
 
         <!-- About Us Section: Provides company history, mission, vision, and team details. -->
@@ -141,51 +138,26 @@
                     </div>
                     <div class="about-team reveal-item">
                         <h3>Our Leadership</h3>
-                        <div class="team-member">
+                        <div class="team-member clickable-card" data-target="prof-akubue-detail">
                             <div class="member-photo-placeholder" aria-label="Photo of Prof. Akubue Augustine Uchenna"><img  class="member-photo-placeholder" src="img/Dr. Akubue.jpg" style="height: 100%; width:100%;"></div>
                             <h4>Prof. Akubue Augustine Uchenna</h4>
                             <p><strong>Chairman</strong> (United Nations diplomat with extensive experience in human management, planning, execution, and monitoring of projects.)</p>
                         </div>
-                        <div class="team-member">
+                        <div class="team-member clickable-card" data-target="engr-franklin-detail">
                             <div class="member-photo-placeholder" aria-label="Photo of ceo"><img  class="member-photo-placeholder" src="img/ceo.jpg" style="height: 100%; width:100%;"></div>
                             <h4>Engr Franklin Akubue Uchenna</h4>
                             <p><strong>CEO</strong> (Kubus Engineering)</p>
                         </div>
-<!--                         <div class="team-member">
-                            <div class="member-photo-placeholder" aria-label="Photo of Engr. Okigbo Chijioke Stephen"></div>
-                            <h4>Engr. Okigbo Chijioke Stephen</h4>
-                            <p><strong>Project Director / Network Expert</strong> (PMP certified, COREN registered, with profound experience in telecom and IT projects.)</p>
-                        </div>
-                        <div class="team-member">
-                            <div class="member-photo-placeholder" aria-label="Photo of Engr. Nwabueze Ugwu"></div>
-                            <h4>Engr. Nwabueze Ugwu</h4>
-                            <p><strong>Project Manager</strong> (PMP certified with a strong background in project implementation and e-banking solutions.)</p>
-                        </div>
-                        <div class="team-member">
-                            <div class="member-photo-placeholder" aria-label="Photo of Maurice M Igbanongo"></div>
-                            <h4>Maurice M Igbanongo</h4>
-                            <p><strong>Passive Infrastructure & Maintenance Engineer</strong> (Experienced in GSM power, BSS, and Transmission network operations.)</p>
-                        </div>
-                        <div class="team-member">
-                            <div class="member-photo-placeholder" aria-label="Photo of Amos Terdboniface Aye"></div>
-                            <h4>Amos Terdboniface Aye</h4>
-                            <p><strong>Information Technology Team Lead</strong> (CCNP, MCITP, ITIL, SCS certified expert in network and systems administration.)</p>
-                        </div> -->
-                        <div class="team-member">
-                            <div class="member-photo-placeholder" aria-label="Photo of Amos Terdboniface Aye"><img  class="member-photo-placeholder" src="img/Loveth.jpg" style="height: 100%; width:100%;"></div>
+                        <div class="team-member clickable-card" data-target="dr-loveth-detail">
+                            <div class="member-photo-placeholder" aria-label="Photo of Dr. Loveth Ebere Agbo"><img  class="member-photo-placeholder" src="img/Loveth.jpg" style="height: 100%; width:100%;"></div>
                             <h4>Dr. Loveth Ebere Agbo</h4>
                             <p><strong>HR/ Head</strong> Kubus Engineering</p>
                         </div>
-                        <div class="team-member">
-                            <div class="member-photo-placeholder" aria-label="Photo of Amos Terdboniface Aye"><img  class="member-photo-placeholder" src="img/Josemaria.jpg" style="height: 100%; width:100%;"></div>
+                        <div class="team-member clickable-card" data-target="josemaria-mamma-detail">
+                            <div class="member-photo-placeholder" aria-label="Photo of Josemaria Mamma"><img  class="member-photo-placeholder" src="img/Josemaria.jpg" style="height: 100%; width:100%;"></div>
                             <h4>Josemaria Mamma</h4>
                             <p><strong>Accountant</strong> Kubus Engineering</p>
                         </div>
-<!--                         <div class="team-member">
-                            <div class="member-photo-placeholder" aria-label="Photo of Amos Terdboniface Aye"></div>
-                            <h4>Pharm Chididum Akubue</h4>
-                            <p><strong>Safety Officer</strong> Kubus Engineering</p>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -198,100 +170,88 @@
                 <p class="section-subtitle">Comprehensive solutions for your digital infrastructure needs.</p>
                 <div class="service-category-grid">
                     
-                    <div class="service-category-item reveal-item">
+                    <div class="service-category-item reveal-item clickable-card" data-target="network-infra-detail">
+                        <img src="img/sv/ni.png" style="border-radius:5px;" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="Network Infrastructure" class="project-image">
+                        
                         <h3>Network Infrastructure</h3>
-                        <ul>
-                            <li><strong>Network Design & Installation:</strong> Planning, implementation, and maintenance of microwave, radio, and fiber optic links.</li>
-                            <li><strong>Starlink & Satellite Internet Setup:</strong> Providing high-speed internet access to remote and underserved areas, including VSAT installation and activation.</li>
-                            <li><strong>LAN/WAN Integration:</strong> Structured cabling, WAN setup, systems supply, and integration for seamless office connectivity.</li>
-                            <li><strong>Data Cabling (Cat6/Cat7):</strong> Professional installation and certification of Cat6/Cat7 cables.</li>
+						<ul>
+                            <li><strong>Network Design & Installation</strong></li>
+                            <li><strong>Starlink & Satellite Internet Setup</strong></li>
+                            <li><strong>LAN/WAN Integration</strong></li>
+                            <li><strong>Data Cabling (Cat6/Cat7)</strong></li>
                         </ul>
                         <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for network infrastructure">Get a Custom Quote</a>
                     </div>
-                    <div class="service-category-item reveal-item">
+                    <div class="service-category-item reveal-item clickable-card" data-target="power-energy-detail">
+                        <img src="img/sv/pes.png" style="border-radius:5px;" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="Power & Energy Solutions" class="project-image">
                         <h3>Power & Energy Solutions</h3>
                         <ul>
-                            <li><strong>Solar Power Installation:</strong> Design and installation of robust solar systems for sustainable power.</li>
-                            <li><strong>Battery Backup Systems:</strong> Implementation and maintenance of reliable battery backup solutions.</li>
-                            <li><strong>Inverter Installation:</strong> Expert installation and maintenance of inverter systems for uninterrupted power supply.</li>
-                            <li><strong>Grid Connection & Optimization:</strong> Connecting sites to the national grid, installation of ATS and meters, and power load balancing.</li>
+                            <li><strong>Solar Power Installation</strong></li>
+                            <li><strong>Battery Backup Systems</strong></li>
+                            <li><strong>Inverter Installation</strong></li>
+                            <li><strong>Grid Connection & Optimization</strong></li>
                         </ul>
                         <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for power and energy solutions">Get a Custom Quote</a>
                     </div>
-                    <div class="service-category-item reveal-item">
+                    <div class="service-category-item reveal-item clickable-card" data-target="cybersecurity-solutions-detail">
+                        <img src="img/sv/cs.png" style="border-radius:5px;" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="Cybersecurity Solutions" class="project-image">
                         <h3>Cybersecurity Solutions</h3>
                         <ul>
-                            <li><strong>Firewall Installation & Management:</strong> Deploying and managing active IOS, ASA, and Checkpoint firewalls.</li>
-                            <li><strong>Endpoint Security:</strong> Protecting devices from threats with advanced antivirus and endpoint protection.</li>
-                            <li><strong>Cybersecurity Software Licensing:</strong> Providing and managing licenses for industry-leading security software.</li>
-                            <li><strong>Security Protocols:</strong> Implementing robust security measures for data protection and network integrity.</li>
+                            <li><strong>Firewall Installation & Management</strong></li>
+                            <li><strong>Endpoint Security</strong></li>
+                            <li><strong>Cybersecurity Software Licensing</strong></li>
+                            <li><strong>Security Protocols</strong></li>
                         </ul>
                         <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for cybersecurity solutions">Get a Custom Quote</a>
                     </div>
-                    <div class="service-category-item reveal-item">
+                    <div class="service-category-item reveal-item clickable-card" data-target="it-training-detail">
+                        <img src="img/sv/itts.png" style="border-radius:5px;" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="IT Training & Support" class="project-image">
                         <h3>IT Training & Support</h3>
                         <ul>
-                            <li><strong>Corporate Training:</strong> Equipping teams with skills in Cisco, Microsoft, CompTIA, and ITIL.</li>
-                            <li><strong>Ongoing Maintenance & Monitoring:</strong> 24/7 support and proactive maintenance for networks and systems.</li>
-                            <li><strong>Disaster Recovery Planning:</strong> Developing and implementing strategies for business continuity.</li>
-                            <li><strong>IT Consulting & Strategy:</strong> Expert advice on optimizing IT infrastructure and digital transformation.</li>
+                            <li><strong>Corporate Training</strong></li>
+                            <li><strong>Ongoing Maintenance & Monitoring</strong></li>
+                            <li><strong>Disaster Recovery Planning</strong></li>
+                            <li><strong>IT Consulting & Strategy</strong></li>
                         </ul>
                         <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for IT training and support">Get a Custom Quote</a>
                     </div>
-                </div>
-				
-				
-				
-				
-				
-				<p class="section-subtitle">Kubus Engineering: Technology Services</p>
-                <div class="service-category-grid">
-                    
-                    <div class="service-category-item reveal-item">
+					
+                    <div class="service-category-item reveal-item clickable-card" data-target="infra-solutions-detail">
+                        <img src="img/sv/is.png" style="border-radius:5px;" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="Infrastructure Solutions" class="project-image">
                         <h3>Infrastructure Solutions</h3>
                         <ul>
-                            <li><strong>Broadband & Network Deployment:</strong> Build and expand telecom and internet infrastructure (fiber-optic networks, 5G/4G towers) to widen connectivity in urban and rural areas. Specialists: network architects, telecom engineers, RF technicians, cybersecurity analysts. (Over 160 million Africans gained broadband access between 2019–2022
-						</li>
-                            <li><strong>Cloud & Data Center Services:</strong> Design and operate cloud computing platforms and local data centers to host applications and data. Specialists: cloud architects, system administrators, DevOps engineers, data center engineers. (“Cloud ensures [services] reach as many citizens as possible, and cybersecurity must underpin all projects”</li>
-                            <li><strong>IoT Connectivity & Edge Computing:</strong> Deploy wide-area IoT networks (LPWAN) and edge servers for smart sensors in cities and industries. Specialists: IoT/network engineers, embedded systems developers, network integrators, cybersecurity experts. (IoT and cloud networks are critical “infrastructure” to power smart city solutions
-						</li>
-                            <li><strong>Smart City Infrastructure:</strong> Implement smart urban systems (intelligent traffic management, smart lighting, environmental sensors, surveillance cameras) integrated via networked platforms. Specialists: IoT specialists, system integrators, urban planners, electrical/civil engineers. (Smart city technologies can transform multiple sectors—from education to health—but require robust infrastructure and connectivity</li>
+                            <li><strong>Broadband & Network Deployment</strong></li>
+                            <li><strong>Cloud & Data Center Services</strong></li>
+                            <li><strong>IoT Connectivity & Edge Computing</strong></li>
+                            <li><strong>Smart City Infrastructure</strong></li>
                         </ul>
-                        <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for network infrastructure">Get a Custom Quote</a>
+                        <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for infrastructure solutions">Get a Custom Quote</a>
                     </div>
-                    <div class="service-category-item reveal-item">
-                                                <h3>Emerging Technologies</h3>
+                    <div class="service-category-item reveal-item clickable-card" data-target="emerging-tech-detail">
+                        <img src="img/sv/et.png" style="border-radius:5px;" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="Emerging Technologies" class="project-image">
+						<h3>Emerging Technologies</h3>
                         <ul>
-                            <li><strong>Blockchain Integration for Government Transparency:</strong> Create blockchain-based public record systems (e.g. land registries, procurement tracking) to ensure tamper-proof government data. Specialists: blockchain developers, smart contract engineers, cybersecurity analysts, legal/compliance experts. (Blockchain can create a “tamper-proof, transparent ledger” for all transactions, reducing opportunities for corruption</li>
-                            <li><strong>AI-Driven Solutions:</strong> Apply artificial intelligence and machine learning across sectors. Examples include AI-powered disease surveillance for healthcare (improving accuracy and timeliness of outbreak detection adaptive learning platforms in education (personalizing lessons and automating grading and fraud detection in banking. Specialists: data scientists, ML/AI engineers, statisticians, healthcare/education specialists. (AI “can significantly improve the accuracy and timeliness of disease detection” and support targeted health interventions</li>
-                            <li><strong>IoT & Embedded Systems:</strong> Deploy sensors and IoT devices for precision agriculture, health, and urban monitoring. For example, soil and climate sensors and drone data in farming (precision agriculture) to boost yieldsand wearable health monitors for patients. Specialists: IoT engineers, electronics/embedded engineers, data analysts, agronomists/biologists. (Precision agriculture uses “sensors, drones and satellite data” with IoT and analytics to generate data-driven farming insights and boost crop yields
-							</li>
-                            <li><strong>Mobile Payment & Fintech Platforms:</strong> Develop mobile banking, digital wallet and e-payment systems to increase financial inclusion (serving consumers and small businesses). Specialists: mobile app developers, fintech product managers, UX/UI designers, cybersecurity engineers. (Mobile payment services like M-Pesa and OPay have helped millions of previously unbanked Africans gain access to finance</li>
-							<li><strong>Robotics & Automation:</strong> Integrate robotics in manufacturing, logistics, and agriculture (e.g. drones, automated farming equipment) to improve productivity. Specialists: robotics engineers, mechanical engineers, control systems developers.</li>
-							<li><strong>AR/VR & Immersive Tech:</strong> Create augmented/virtual reality applications for education and training (e.g. virtual classrooms, 3D simulations for vocational training). Specialists: AR/VR developers, 3D artists, instructional designers.</li>
-							<li><strong>Data Analytics & Big Data:</strong> Implement data platforms and analytics tools for sectors (e.g. education analytics, public health dashboards, agricultural yield forecasting). Specialists: data engineers, BI developers, data scientists.</li>
-							<li><strong>Cybersecurity & Trust Services:</strong> Offer security solutions (encryption, identity management, fraud prevention) for all digital initiatives. Specialists: cybersecurity analysts, network security engineers, compliance officers. (In African banking, AI-driven fraud detection and robust security are essential for “more efficient and secure financial systems”</li>
+                            <li><strong>Blockchain Integration</strong></li>
+                            <li><strong>AI-Driven Solutions</strong></li>
+                            <li><strong>IoT & Embedded Systems</strong></li>
+                            <li><strong>Fintech Platforms</strong></li>
+							
 						</ul>
-                        <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for network infrastructure">Get a Custom Quote</a>
+                        <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for emerging technologies">Get a Custom Quote</a>
                     </div>
-                    <div class="service-category-item reveal-item">
+                    <div class="service-category-item reveal-item clickable-card" data-target="digital-transform-detail">
+                        <img src="img/sv/dtc.png" style="border-radius:5px;" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="Digital Transformation & Consulting" class="project-image">
                         <h3>Digital Transformation & Consulting</h3>
                         <ul>
-                            <li><strong>Digital Strategy & Consulting:</strong> Advise governments and businesses on digital roadmaps and policy (e-government plans, DPI initiatives, regulatory compliance). Specialists: digital transformation consultants, management analysts, policy advisors. (Digital public infrastructure – including ID systems and payments – is key to Africa’s transformation</li>
-                            <li><strong>E-Government & Digital Services:</strong> Design and integrate online government portals (e-taxation, e-payments, licensing, e-voting) and national digital ID programs. Specialists: software developers, systems integrators, cybersecurity experts, biometric specialists. (Countries are adopting e-government portals for services and digital IDs with biometric data to improve efficiency and transparency</li>
-                            <li><strong>Education & e-Learning Solutions:</strong> Develop cloud-based learning platforms and smart classroom technology for schools, universities and learners. Specialists: e-learning developers, educational technologists, AI engineers, UX designers. (Digital tools like online courses and “virtual classrooms” are expanding access to learning in Africa, supported by connected whiteboards and smart desks that collect student data for personalized learning </li>
-                            <li><strong>Healthcare IT & Telemedicine:</strong> Build telehealth systems, electronic medical record platforms, and remote patient monitoring solutions. Specialists: health informatics engineers, mobile app developers, data analysts, IoT specialists. (Telemedicine and mobile health apps are extending care to underserved populations, and IoT wearables enable continuous monitoring of chronic conditions</li>
-							<li><strong>Fintech & Payment Consulting:</strong> Help financial institutions implement mobile money, blockchain-based payments and AI-based risk systems. Specialists: fintech consultants, blockchain developers, AI engineers, compliance analysts. (Innovations in fintech and cross-border payments are projected to greatly expand Africa’s digital financial services</li>
-							<li><strong>Agritech & Supply Chain Services:</strong> Provide digital tools for agriculture (marketplace apps, supply-chain traceability using blockchain, farm advisory services). Specialists: agritech consultants, blockchain developers, mobile developers, extension service experts. (Digital tools help smallholder farmers plan better and access markets, addressing the “data gaps” that limit productivity</li>
-							<li><strong>Data & Analytics Consulting:</strong> Set up data warehouses, dashboards and analytics frameworks for institutional clients to make data-driven decisions. Specialists: BI consultants, data scientists, data engineers, statisticians.</li>
-							<li><strong>Capacity Building & Training:</strong> Offer workforce training and change-management to ensure successful technology adoption. Specialists: training consultants, instructional designers, organizational change managers. (The World Bank notes a “limited skills” challenge in digitally enabled industries across Africaworldbank.org, highlighting the need for training services.)</li>
-							<li><strong>Cybersecurity & Risk Advisory:</strong> Conduct security audits and develop governance frameworks for digital projects. Specialists: security auditors, risk analysts, forensic experts. (Rapid digitalization heightens cyber risks, so strong security strategy and compliance are critical</li>
+                            <li><strong>Digital Strategy & Consulting</strong></li>
+                            <li><strong>E-Government & Digital Services</strong></li>
+                            <li><strong>Education & e-Learning Solutions</strong></li>
+                            <li><strong>Healthcare IT & Telemedicine</strong></li>
 						</ul>
-                        <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for network infrastructure">Get a Custom Quote</a>
+                        <a href="#contact-trigger" class="btn secondary-btn small-btn" aria-label="Get a custom quote for digital transformation">Get a Custom Quote</a>
 					</div>
                 </div>
             </div>
-			
         </section>
 
         <!-- Packages / Pricing Section: Outlines standard service packages for various needs. -->
@@ -371,7 +331,6 @@
                 <div class="projects-grid">
                     <div class="project-card" data-project-id="1" data-tech="Internet, CCTV, E-learning">
                         <img src="img/fudan.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="Fudan University IT & E-learning Project Visual" class="project-image">
-                        <!--<img src="https://placehold.co/400x300/6A0DAD/E0E0E0?text=Fudan+University" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="Fudan University IT & E-learning Project Visual" class="project-image">-->
                         <div class="project-overlay">
                             <h3 class="project-title">Fudan University IT & E-learning</h3>
                             <p class="project-tech-summary">Internet, CCTV, E-learning Software</p>
@@ -379,7 +338,6 @@
                     </div>
                      <div class="project-card" data-project-id="2" data-tech="E-learning, Digital Services">
                         <img src="img/central.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="Central Washington E-learning" class="project-image">
-                        <!--<img src="https://placehold.co/400x300/00E676/0A0A0A?text=Central+Washington+College" onerror="this.onerror=null;this.src='https://placehold.co/400x300/00E676/0A0A0A?text=Project+2';" alt="Central Washington E-learning Project Visual" class="project-image">-->
                         <div class="project-overlay">
                             <h3 class="project-title">Central Washington E-learning</h3>
                             <p class="project-tech-summary">Digital E-learning Services</p>
@@ -387,7 +345,6 @@
                     </div>
                     <div class="project-card" data-project-id="3" data-tech="Satellite Internet, VSAT, High Speed">
                         <img src="img/central2.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="Central Washington Satellite Internet" class="project-image">
-                        <!--<img src="https://placehold.co/400x300/6A0DAD/E0E0E0?text=Satellite+Internet" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+3';" alt="Central Washington Satellite Internet Project Visual" class="project-image">-->
                         <div class="project-overlay">
                             <h3 class="project-title">Central Washington Satellite Internet</h3>
                             <p class="project-tech-summary">High-Speed Satellite Internet</p>
@@ -395,7 +352,6 @@
                     </div>
                     <div class="project-card" data-project-id="4" data-tech="Data Center, LAN, WAN, Server">
                         <img src="img/fmst.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="FMST Data Center & Resource Center" class="project-image">
-                        <!--<img src="https://placehold.co/400x300/00E676/0A0A0A?text=FMST+Data+Center" onerror="this.onerror=null;this.src='https://placehold.co/400x300/00E676/0A0A0A?text=Project+4';" alt="FMST Data Center & Resource Center Project Visual" class="project-image">-->
                         <div class="project-overlay">
                             <h3 class="project-title">FMST Data Center & Resource Center</h3>
                             <p class="project-tech-summary">Data Center, LAN/WAN, Servers</p>
@@ -403,7 +359,6 @@
                     </div>
                     <div class="project-card" data-project-id="5" data-tech="VSAT, Satellite Communication">
                         <img src="img/national.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="Nationwide VSAT Deployment" class="project-image">
-                        <!--<img src="https://placehold.co/400x300/6A0DAD/E0E0E0?text=Nationwide+VSAT" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+5';" alt="Nationwide VSAT Deployment Project Visual" class="project-image">-->
                         <div class="project-overlay">
                             <h3 class="project-title">Nationwide VSAT Deployment</h3>
                             <p class="project-tech-summary">VSAT Installation & Activation</p>
@@ -411,7 +366,6 @@
                     </div>
                     <div class="project-card" data-project-id="6" data-tech="Grid Connection, Power, ATS">
                         <img src="img/ihs to.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6A0DAD/E0E0E0?text=Project+1';" alt="IHS Africa Grid Connection" class="project-image">
-                        <!--<img src="https://placehold.co/400x300/00E676/0A0A0A?text=IHS+Africa+Grid" onerror="this.onerror=null;this.src='https://placehold.co/400x300/00E676/0A0A0A?text=Project+6';" alt="IHS Africa Grid Connection Project Visual" class="project-image">-->
                         <div class="project-overlay">
                             <h3 class="project-title">IHS Africa Grid Connection</h3>
                             <p class="project-tech-summary">Power Infrastructure, Grid Connection</p>
@@ -600,7 +554,7 @@
         </section>
 
         <!-- Contact Us Section -->
-        <section id="contact-trigger" class="contact-trigger-section reveal-section">
+        <section id="contact-trigger" class="contact-trigger-section section-padding reveal-section">
             <div class="container text-center">
                 <h2 class="section-title">Connect With Kubus Engineering</h2>
                 <p class="section-subtitle">Ready to transform your vision into an engineered reality? Initiate a secure consultation with our experts today.</p>
@@ -652,11 +606,239 @@
         </div>
     </div>
 
+    <!-- ========= DETAIL VIEW CONTAINER ========= -->
+    <div id="detail-view-container" class="detail-view-container">
+        <button id="back-to-main-btn" class="btn secondary-btn">← Back to Site</button>
+
+        <!-- Leadership Profile Sections -->
+        <section id="prof-akubue-detail" class="detail-section">
+            <div class="container detail-content-wrapper">
+                <h2 class="detail-title">Leadership Profile</h2>
+                <div class="profile-layout">
+                    <div class="profile-image-container">
+                        <img src="img/Dr. Akubue.jpg" alt="Prof. Akubue Augustine Uchenna">
+                    </div>
+                    <div class="profile-text-content">
+                        <h3>Prof. Akubue Augustine Uchenna</h3>
+                        <p class="profile-role">Chairman, Kubus Engineering</p>
+                        <p class="profile-bio">As Chairman of the Board, Prof. Akubue provides strategic governance and high-level guidance that aligns Kubus Engineering with international standards of excellence and sustainable growth. His extensive background as a United Nations diplomat brings a unique global perspective to our operations, emphasizing ethical practices, meticulous project oversight, and robust stakeholder relations. He is instrumental in shaping the company's long-term vision and ensuring our mission remains focused on delivering impactful digital solutions across Africa.</p>
+                        <h4>Core Responsibilities:</h4>
+                        <ul>
+                            <li>Setting the company's strategic direction and corporate vision.</li>
+                            <li>Overseeing corporate governance and compliance frameworks.</li>
+                            <li>Fostering high-level partnerships with international bodies and government agencies.</li>
+                            <li>Mentoring the executive team and ensuring leadership continuity.</li>
+                            <li>Championing the company's commitment to social responsibility and bridging the digital divide.</li>
+                        </ul>
+                        <a href="#contact-trigger" class="btn primary-btn small-btn open-contact-modal">Connect with our Leadership</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="engr-franklin-detail" class="detail-section">
+            <div class="container detail-content-wrapper">
+                <h2 class="detail-title">Leadership Profile</h2>
+                <div class="profile-layout">
+                    <div class="profile-image-container">
+                        <img src="img/ceo.jpg" alt="Engr Franklin Akubue Uchenna">
+                    </div>
+                    <div class="profile-text-content">
+                        <h3>Engr. Franklin Akubue Uchenna</h3>
+                        <p class="profile-role">Chief Executive Officer (CEO)</p>
+                        <p class="profile-bio">Engr. Franklin is the driving force behind Kubus Engineering's operational excellence and technical innovation. As CEO, he translates the company's vision into actionable strategies, leading a team of elite engineers and technicians to execute complex projects with precision. His hands-on experience in telecommunications and software engineering ensures that every solution we deliver is robust, scalable, and tailored to meet the unique challenges of our clients. He is deeply committed to customer satisfaction and achieving the guaranteed 99.99% service availability that defines our brand.</p>
+                        <h4>Core Responsibilities:</h4>
+                        <ul>
+                            <li>Leading the day-to-day operations and management of the company.</li>
+                            <li>Directing technical strategy, research, and development.</li>
+                            <li>Managing key client accounts and ensuring project delivery success.</li>
+                            <li>Driving business development and market expansion across Africa.</li>
+                            <li>Cultivating a culture of innovation, integrity, and excellence within the team.</li>
+                        </ul>
+                        <a href="#contact-trigger" class="btn primary-btn small-btn open-contact-modal">Discuss a Project with our CEO</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="dr-loveth-detail" class="detail-section">
+            <div class="container detail-content-wrapper">
+                <h2 class="detail-title">Leadership Profile</h2>
+                <div class="profile-layout">
+                    <div class="profile-image-container">
+                        <img src="img/Loveth.jpg" alt="Dr. Loveth Ebere Agbo">
+                    </div>
+                    <div class="profile-text-content">
+                        <h3>Dr. Loveth Ebere Agbo</h3>
+                        <p class="profile-role">Head of Human Resources & Administration</p>
+                        <p class="profile-bio">Dr. Loveth is the cornerstone of our corporate culture and organizational strength. As the Head of HR and Administration, she is responsible for nurturing our most valuable asset: our people. She leads all aspects of talent acquisition, employee development, and welfare, ensuring that Kubus Engineering remains an employer of choice for top-tier tech talent. Her administrative leadership ensures that our operations in Enugu, Lagos, and Abuja run smoothly and efficiently, providing the backbone of support that enables our technical teams to excel.</p>
+                        <h4>Core Responsibilities:</h4>
+                        <ul>
+                            <li>Developing and implementing HR strategies and initiatives.</li>
+                            <li>Managing the full recruitment and onboarding lifecycle.</li>
+                            <li>Overseeing employee relations, performance management, and training programs.</li>
+                            <li>Managing office administration and logistical operations across all branches.</li>
+                            <li>Ensuring a safe, collaborative, and productive work environment.</li>
+                        </ul>
+                        <a href="#careers" class="btn primary-btn small-btn">Explore Career Opportunities</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="josemaria-mamma-detail" class="detail-section">
+            <div class="container detail-content-wrapper">
+                <h2 class="detail-title">Leadership Profile</h2>
+                <div class="profile-layout">
+                    <div class="profile-image-container">
+                        <img src="img/Josemaria.jpg" alt="Josemaria Mamma">
+                    </div>
+                    <div class="profile-text-content">
+                        <h3>Josemaria Mamma</h3>
+                        <p class="profile-role">Accountant</p>
+                        <p class="profile-bio">Josemaria Mamma ensures the financial health and integrity of Kubus Engineering. As our lead Accountant, he manages all financial transactions, reporting, and compliance with meticulous attention to detail. His expertise in financial planning, budgeting, and analysis provides the fiscal discipline necessary for sustainable business growth and large-scale project investment. He plays a critical role in maintaining transparency with stakeholders and ensuring our financial operations are as robust and reliable as our technical solutions.</p>
+                        <h4>Core Responsibilities:</h4>
+                        <ul>
+                            <li>Managing all accounting operations including billing, A/R, A/P, and payroll.</li>
+                            <li>Preparing budgets, financial forecasts, and variance analysis.</li>
+                            <li>Ensuring timely and accurate financial reporting for management review.</li>
+                            <li>Coordinating with auditors and ensuring regulatory and tax compliance.</li>
+                            <li>Analyzing financial performance and providing strategic recommendations.</li>
+                        </ul>
+                        <a href="#contact-trigger" class="btn primary-btn small-btn open-contact-modal">Contact our Finance Department</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Detail Sections -->
+        <section id="network-infra-detail" class="detail-section">
+            <div class="container detail-content-wrapper">
+                <h2 class="detail-title">Core Service Deep Dive</h2>
+                <div class="service-layout">
+                    <h3>Network Infrastructure</h3>
+                    <p class="service-overview">Our Network Infrastructure services form the bedrock of modern digital connectivity. We design, build, and maintain robust, high-performance networks that serve as the central nervous system for businesses, schools, and communities. From urban centers to the most remote locations, we deliver reliable connectivity that empowers communication, collaboration, and growth.</p>
+                    <h4>Key Offerings in this Service:</h4>
+                    <ul>
+                        <li><strong>Network Design & Installation:</strong> We conduct thorough site surveys and needs analysis to architect bespoke network solutions. This includes planning and deploying high-capacity microwave links for point-to-point connections, resilient fiber optic backbones, and wide-coverage radio networks.</li>
+                        <li><strong>Starlink & Satellite Internet Setup:</strong> As certified installers, we bridge the digital divide by deploying Starlink and traditional VSAT solutions, bringing high-speed, low-latency internet to areas where terrestrial infrastructure is unavailable. Our service includes installation, activation, and ongoing performance management.</li>
+                        <li><strong>LAN/WAN Integration:</strong> We create seamless and secure office environments through expert Local Area Network (LAN) and Wide Area Network (WAN) integration. This encompasses structured cabling, router and switch configuration, and integrating disparate systems into a single, cohesive network.</li>
+                        <li><strong>Data Cabling (Cat6/Cat7):</strong> The physical layer is critical. We provide professional installation, termination, and Fluke testing certification for Cat6/Cat7 copper cabling, ensuring your network's physical integrity meets the highest industry standards for speed and reliability.</li>
+                    </ul>
+                    <a href="#contact-trigger" class="btn primary-btn open-contact-modal">Request a Quote for Network Services</a>
+                </div>
+            </div>
+        </section>
+        <section id="power-energy-detail" class="detail-section">
+            <div class="container detail-content-wrapper">
+                <h2 class="detail-title">Core Service Deep Dive</h2>
+                <div class="service-layout">
+                    <h3>Power & Energy Solutions</h3>
+                    <p class="service-overview">In an environment where consistent power is a challenge, our Energy Solutions are designed for maximum resilience and efficiency. We specialize in creating hybrid power systems that guarantee uninterrupted operations for critical infrastructure, reducing reliance on unstable grids and costly fossil fuels. Our solutions are sustainable, reliable, and built to last.</p>
+                    <h4>Key Offerings in this Service:</h4>
+                    <ul>
+                        <li><strong>Solar Power Installation:</strong> We design and deploy commercial-grade solar power systems tailored to your specific load requirements. Our service includes panel installation, inverter configuration, and integration with existing power sources to provide clean, renewable energy and significantly reduce operational costs.</li>
+                        <li><strong>Battery Backup Systems:</strong> We implement high-capacity battery banks using advanced lithium-ion or deep-cycle technologies. These systems store energy from solar or the grid, providing hours or even days of autonomous power during outages, ensuring 100% uptime for your critical systems.</li>
+                        <li><strong>Inverter Installation & Maintenance:</strong> The inverter is the heart of any backup system. We install and maintain pure sine wave inverters that provide stable, clean power, safe for sensitive electronic equipment. Our proactive maintenance ensures your system is always ready when you need it most.</li>
+                        <li><strong>Grid Connection & Optimization:</strong> For sites with access to the national grid, we manage the entire connection process. This includes installing Automatic Transfer Switches (ATS) for seamless failover, metering, and performing power load balancing to prevent overloads and optimize energy consumption.</li>
+                    </ul>
+                    <a href="#contact-trigger" class="btn primary-btn open-contact-modal">Request a Quote for Energy Solutions</a>
+                </div>
+            </div>
+        </section>
+        <section id="cybersecurity-solutions-detail" class="detail-section">
+            <div class="container detail-content-wrapper">
+                <h2 class="detail-title">Core Service Deep Dive</h2>
+                <div class="service-layout">
+                    <h3>Cybersecurity Solutions</h3>
+                    <p class="service-overview">As connectivity grows, so do the threats. Our multi-layered Cybersecurity Solutions are designed to protect your digital assets from the inside out. We move beyond basic antivirus, implementing a proactive, defense-in-depth strategy that identifies, prevents, and responds to sophisticated cyber threats, ensuring the integrity and confidentiality of your data.</p>
+                    <h4>Key Offerings in this Service:</h4>
+                    <ul>
+                        <li><strong>Firewall Installation & Management:</strong> We are experts in deploying and managing industry-leading firewalls, including Cisco IOS, ASA, and Checkpoint. We configure access control lists (ACLs), intrusion prevention systems (IPS), and VPNs to create a hardened perimeter against unauthorized access.</li>
+                        <li><strong>Endpoint Security:</strong> Your devices are the frontline. We deploy advanced Endpoint Detection and Response (EDR) solutions that go beyond traditional antivirus, using AI and behavioral analysis to detect and block malware, ransomware, and zero-day exploits in real-time.</li>
+                        <li><strong>Cybersecurity Software Licensing:</strong> Navigating the world of security software can be complex. We act as your trusted advisor and reseller, providing and managing licenses for best-in-class security tools, ensuring you get the right protection at the best value.</li>
+                        <li><strong>Security Protocols & Audits:</strong> We help you build a culture of security by implementing robust protocols for data handling, access control, and incident response. We conduct regular vulnerability assessments and penetration testing to identify and remediate weaknesses before they can be exploited.</li>
+                    </ul>
+                    <a href="#contact-trigger" class="btn primary-btn open-contact-modal">Request a Cybersecurity Consultation</a>
+                </div>
+            </div>
+        </section>
+        <section id="it-training-detail" class="detail-section">
+            <div class="container detail-content-wrapper">
+                <h2 class="detail-title">Core Service Deep Dive</h2>
+                <div class="service-layout">
+                    <h3>IT Training & Support</h3>
+                    <p class="service-overview">Technology is only as powerful as the people who use it. Our IT Training and Support services are designed to empower your team and ensure your infrastructure runs flawlessly. We provide the knowledge, skills, and ongoing support needed to maximize your technology investment, from user training to 24/7 critical system monitoring.</p>
+                    <h4>Key Offerings in this Service:</h4>
+                    <ul>
+                        <li><strong>Corporate Training:</strong> We upskill your workforce with certified training programs. Our curriculum covers a wide range of essential IT competencies, including Cisco networking (CCNA/CCNP), Microsoft systems (MCSA), CompTIA (A+, Network+, Security+), and IT service management (ITIL).</li>
+                        <li><strong>Ongoing Maintenance & Monitoring:</strong> We offer comprehensive managed service contracts that include 24/7 network and system monitoring. Our proactive approach identifies and resolves potential issues before they cause downtime, ensuring the 99.99% availability we promise.</li>
+                        <li><strong>Disaster Recovery Planning:</strong> Business continuity is non-negotiable. We work with you to develop and implement a comprehensive Disaster Recovery (DR) plan, including data backup strategies, system redundancy, and a clear roadmap to restore operations quickly after any unforeseen event.</li>
+                        <li><strong>IT Consulting & Strategy:</strong> Leverage our expertise to make informed technology decisions. We provide strategic consulting to help you optimize your IT budget, plan for future growth, and navigate your digital transformation journey with confidence.</li>
+                    </ul>
+                    <a href="#contact-trigger" class="btn primary-btn open-contact-modal">Inquire About Training & Support</a>
+                </div>
+            </div>
+        </section>
+        <section id="infra-solutions-detail" class="detail-section">
+            <div class="container detail-content-wrapper">
+                <h2 class="detail-title">Technology Service Deep Dive</h2>
+                <div class="service-layout">
+                    <h3>Infrastructure Solutions</h3>
+                    <p class="service-overview">We build the foundational pillars of Africa's digital future. Our infrastructure solutions are engineered for scale, reliability, and performance, connecting people and services across urban and rural landscapes. We provide the essential physical and virtual architecture upon which digital economies are built.</p>
+                    <h4>Key Offerings in this Service:</h4>
+                    <ul>
+                        <li><strong>Broadband & Network Deployment:</strong> We build and expand core telecom infrastructure, including fiber-optic networks and 4G/5G towers, to widen high-speed connectivity for millions.</li>
+                        <li><strong>Cloud & Data Center Services:</strong> We design, build, and operate secure, localized cloud computing platforms and data centers to host critical applications and ensure data sovereignty.</li>
+                        <li><strong>IoT Connectivity & Edge Computing:</strong> We deploy wide-area IoT networks (like LPWAN) and edge computing servers, enabling real-time data processing for smart city and industrial applications.</li>
+                        <li><strong>Smart City Infrastructure:</strong> We implement integrated urban systems, such as intelligent traffic management, smart lighting, and environmental sensors, to create more efficient, sustainable, and responsive cities.</li>
+                    </ul>
+                    <a href="#contact-trigger" class="btn primary-btn open-contact-modal">Discuss Your Infrastructure Project</a>
+                </div>
+            </div>
+        </section>
+        <section id="emerging-tech-detail" class="detail-section">
+            <div class="container detail-content-wrapper">
+                <h2 class="detail-title">Technology Service Deep Dive</h2>
+                <div class="service-layout">
+                    <h3>Emerging Technologies</h3>
+                    <p class="service-overview">We harness the power of tomorrow's technology to solve today's challenges. Our expertise in emerging tech allows us to build transformative solutions that drive efficiency, transparency, and innovation across key sectors like finance, healthcare, and governance.</p>
+                    <h4>Key Offerings in this Service:</h4>
+                    <ul>
+                        <li><strong>Blockchain Integration:</strong> We create tamper-proof, transparent ledger systems for applications like land registries, supply chain tracking, and secure voting, enhancing trust and reducing corruption.</li>
+                        <li><strong>AI-Driven Solutions:</strong> We leverage artificial intelligence and machine learning for predictive analytics, from disease surveillance in healthcare to personalized learning platforms in education and fraud detection in banking.</li>
+                        <li><strong>IoT & Embedded Systems:</strong> We develop and deploy custom sensor networks for precision agriculture (boosting crop yields), remote patient health monitoring, and smart environmental management.</li>
+                        <li><strong>Mobile Payment & Fintech Platforms:</strong> We build secure and scalable mobile banking apps, digital wallets, and e-payment gateways to accelerate financial inclusion for consumers and small businesses.</li>
+                        <li><strong>Robotics & Automation:</strong> We integrate robotics and automation into manufacturing, logistics, and agriculture to boost productivity and create safer work environments.</li>
+                        <li><strong>AR/VR & Immersive Tech:</strong> We develop augmented and virtual reality applications for advanced training simulations, virtual classrooms, and immersive customer experiences.</li>
+                    </ul>
+                    <a href="#contact-trigger" class="btn primary-btn open-contact-modal">Innovate with Emerging Tech</a>
+                </div>
+            </div>
+        </section>
+        <section id="digital-transform-detail" class="detail-section">
+            <div class="container detail-content-wrapper">
+                <h2 class="detail-title">Technology Service Deep Dive</h2>
+                <div class="service-layout">
+                    <h3>Digital Transformation & Consulting</h3>
+                    <p class="service-overview">Technology is a tool; transformation is the goal. We partner with organizations to reimagine their operations for a digital-first world. Our consulting services provide the strategic roadmap, technical expertise, and change management needed to navigate complex digital transitions successfully.</p>
+                    <h4>Key Offerings in this Service:</h4>
+                    <ul>
+                        <li><strong>Digital Strategy & Policy Consulting:</strong> We advise governments and large enterprises on creating effective digital roadmaps, e-government frameworks, and regulatory compliance strategies.</li>
+                        <li><strong>E-Government & Digital Services:</strong> We design and integrate citizen-facing online portals for services like e-taxation, business licensing, and national digital ID programs to improve public service delivery.</li>
+                        <li><strong>Education & e-Learning Solutions:</strong> We develop comprehensive e-learning ecosystems, from cloud-based learning management systems (LMS) to interactive smart classroom technology for schools and universities.</li>
+                        <li><strong>Healthcare IT & Telemedicine:</strong> We build HIPAA-compliant telehealth platforms, electronic medical record (EMR) systems, and remote patient monitoring solutions to extend the reach and efficiency of healthcare providers.</li>
+                        <li><strong>Agritech & Supply Chain Services:</strong> We provide digital platforms that connect farmers to markets, enable supply-chain traceability with blockchain, and deliver data-driven advisory services.</li>
+                        <li><strong>Capacity Building & Training:</strong> We ensure successful technology adoption by offering robust workforce training, upskilling programs, and organizational change management.</li>
+                    </ul>
+                    <a href="#contact-trigger" class="btn primary-btn open-contact-modal">Start Your Digital Transformation</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
 
     <!-- Main Footer -->
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; <span id="copy-right">new Date().getFullYear();</span> Kubus Engineering. All Rights Reserved.</p>
+            <p>© <span id="copy-right">new Date().getFullYear();</span> Kubus Engineering. All Rights Reserved.</p>
             <div class="footer-links">
                 <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
                 <span class="separator">|</span>
@@ -672,4 +854,37 @@
     <!-- Your Custom JavaScript -->
     <script src="js/main.js"></script>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('nav a'); // Or whatever your nav links selector is
+        // This selects ALL elements with the 'reveal-section' class
+        const allSections = document.querySelectorAll('.reveal-section');
+
+        function hideAllSections() {
+            allSections.forEach(section => {
+                section.classList.remove('active'); // Removes the 'active' class from ALL of them
+            });
+        }
+
+        window.showSection = function(sectionId) {
+            hideAllSections(); // Call this first to hide everything
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active'); // Then show only the target one
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                showSection(targetId); // This will handle hiding all and showing the target
+            });
+        });
+
+        // Show the Hero section by default on initial page load
+        showSection('hero');
+    });
+</script>
 </html>
